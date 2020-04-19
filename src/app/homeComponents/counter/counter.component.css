@@ -1,0 +1,72 @@
+h3 {
+    text-align: center;
+    font-family: Raleway, sans-serif;
+    font-size: 24px;
+    font-weight: 900;
+    text-transform: uppercase;
+    position: relative;
+    color: White;
+}
+
+#counter-area {
+    background-color: rgba(0, 0, 255, 0.185);
+    min-height: 25vh;
+    text-align: center;
+    background: /* top, transparent red, faked with gradient */
+    linear-gradient( rgba(0, 153, 255, 0.45), rgba(0, 153, 255, 0.45)), url('src/assets/images/CounterWallper.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.counter {
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    font-size: 48px;
+    display: block;
+    color: #FFFFFF;
+}
+
+.counter_text {
+    padding: 0;
+    margin: 0 0 20px 0;
+    font-family: Raleway, sans-serif;
+    font-size: 24px;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: White;
+}
+
+#counter-area>.container {
+    margin: 0 auto;
+}
+
+.section-header {
+    margin: 1em auto;
+    display: inline-block;
+}
+
+.section-header:before,
+.section-header:after {
+    content: "";
+    display: block;
+    height: 5px;
+    width: 100%;
+    background-color: #FFFFFF;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0px auto;
+}
+
+.section-header:after {
+    margin-top: -1.5px;
+}
+
+.container {
+    text-align: center;
+}
+
+.col-md-4 {
+    padding: 0px;
+}

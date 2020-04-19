@@ -1,0 +1,19 @@
+<section id="offersection">
+    <div class="container">
+        <header class="section-header">
+            <h3>Astra Luna</h3>
+            <p>Wałecka Szkoła Tańca</p>
+        </header>
+        <div class="row">
+            <div *ngFor="let item of gallery; let i = index"  class="col-md-4" data-aos="fade-up" data-aos-duration="500" [attr.data-aos-delay]="i*100" (click)="onSelect(item)">  
+                <div class="card" [style.background]="'url('+ item.photopath +')'">
+                    <div class=content>
+                        <div class="container">
+                            <h4><b>{{item.dirname}}</b></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

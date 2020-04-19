@@ -1,0 +1,91 @@
+#offersection
+{
+    margin-top:70px;
+    padding: 1em;
+}
+.card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: center center !important;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 30px;
+  }
+  
+  /* On mouse-over, add a deeper shadow */
+
+  
+  /* Add some padding inside the card container */
+.card .container , .card .container-info{
+    padding: 2px 16px;
+    position:absolute;
+    display: block;
+    bottom:0;
+    box-sizing: border-box;
+  }
+
+.card .container h4 , .card .container p,.card .container-info h4 , .card .container-info p{
+    color:#fff;
+  }
+
+.content
+  {
+    height: 100%;
+    border: 1px solid transparent;
+    transition: 0.3s;
+  }
+.addinfohover
+  {
+    opacity:0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: opacity 0.3s;
+    
+  }
+.addinfohover p
+  {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding:0.75em 1rem 0.75em 1rem; 
+    background-image: linear-gradient(to left top, #e57373, #db5f5e, #d04b48, #c43632, #b71c1c);
+    color: #fff;
+  }
+
+.content:hover {
+    border: 1px solid #ff0000;
+    background: rgba(0, 0, 0, 0.4);
+    
+   }
+
+   .container-info
+   {
+    opacity:0;
+   }
+  .content:hover  .addinfohover{
+    opacity: 1;
+   }
+
+   .content:hover  .container{
+    opacity: 0;
+   
+   }
+
+   .content:hover  .container-info{
+    opacity: 1;
+    animation-name: fadeInUp;
+    animation-duration: 0.3s;
+   }
+
+  .container-info
+   {
+    opacity:0;
+   }
+

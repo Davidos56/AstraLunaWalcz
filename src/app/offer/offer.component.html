@@ -1,0 +1,26 @@
+<section id="offersection" [ngClass]="{ 'top':isShadow }">
+    <div class="container">
+        <header class="section-header helperline-red">
+            <h3>Oferty</h3>
+        </header>
+        <div class="row">
+            <div *ngFor="let offer of offers; let i = index" class="col-md-4" data-aos="fade-up" data-aos-duration="500" [attr.data-aos-delay]="i*100" (click)="onSelect(offer)">
+                <div class="card" [style.backgroundImage]="'url('+ offer.backgroundString +')'">
+                    <div class=content>
+                        <div class="addinfohover">
+                            <p>{{offer.tag}}</p>
+                        </div>
+                        <div class="container">
+                            <h4><b>{{offer.head}}</b></h4>
+                            <p>{{offer.shortContent}}</p>
+                        </div>
+                        <div class="container-info animated">
+                            <h4><b>{{offer.head}}</b></h4>
+                            <p>{{offer.longcontent}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

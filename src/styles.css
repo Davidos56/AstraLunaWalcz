@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+@import './assets/css/animate.css';
+@import 'owl.carousel/dist/assets/owl.carousel.css';
+body
+{
+    background-color: #eaeaea !important;
+    font-family: "Playfair Display";
+}
+section
+{
+    position: relative;
+    display: block;  
+}
+.animated {
+    visibility: visible !important;
+}
+.hide-on-init {
+    visibility: hidden;
+}
+
+
+

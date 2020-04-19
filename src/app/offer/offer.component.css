@@ -1,0 +1,142 @@
+h3 {
+    text-align: center;
+    font-family: Raleway, sans-serif;
+    font-size: 24px;
+    font-weight: 900;
+    text-transform: uppercase;
+    position: relative;
+    color: #333;
+}
+
+.section-header:before,
+.section-header:after {
+    content: "";
+    display: block;
+    height: 3px;
+    width: 5%;
+    background-color: #121517;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0px auto;
+    margin-top: 2px;
+}
+
+.section-header:after {
+    width: 10%;
+    background-color: #ff5555;
+    margin: 1em auto;
+    margin-top: -1.5px;
+}
+
+#offersection {
+    padding: 1em;
+    padding-top: 100px;
+}
+
+.card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: center center !important;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+
+/* Add some padding inside the card container */
+
+.card .container,
+.card .container-info {
+    padding: 2px 16px;
+    position: absolute;
+    display: block;
+    bottom: 0;
+    box-sizing: border-box;
+}
+
+.card .container h4,
+.card .container p,
+.card .container-info h4,
+.card .container-info p {
+    color: #fff;
+}
+
+.content {
+    height: 100%;
+    border: 1px solid transparent;
+    transition: 0.3s;
+}
+
+.addinfohover {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: opacity 0.3s;
+}
+
+.addinfohover p {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.75em 1rem 0.75em 1rem;
+    background-image: linear-gradient(to left top, #e57373, #db5f5e, #d04b48, #c43632, #b71c1c);
+    color: #fff;
+}
+
+.content:hover {
+    border: 1px solid #ff0000;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.container-info {
+    opacity: 0;
+}
+
+.content:hover .addinfohover {
+    opacity: 1;
+}
+
+.content:hover .container {
+    opacity: 0;
+}
+
+.content:hover .container-info {
+    opacity: 1;
+    animation-name: fadeInUp;
+    animation-duration: 0.3s;
+}
+
+.container-info {
+    opacity: 0;
+}
+
+.top {
+    box-shadow: inset 0px 0px 60px -11px #888, inset 0px 0px 60px -11px #888;
+}
+
+.bottom {
+    box-shadow: 0 5px 5px -5px #333;
+}
+
+
+/* HELPERS LINES */
+
+
+/* .helperline-red {
+    border: solid red 4px;
+}
+
+.helperline-pink {
+    border: solid pink 4px;
+}
+
+.helperline-green {
+    border: solid green 4px;
+} */

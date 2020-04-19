@@ -1,0 +1,111 @@
+.container>.contentHeader>h2 {
+    text-align: center;
+    font-family: Raleway, sans-serif;
+    font-size: 24px;
+    font-weight: 900;
+    text-transform: uppercase;
+    position: relative;
+    color: #333;
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+    display: inline-block;
+}
+
+.container>.mainHeader>h1 {
+    text-align: center;
+    font-family: Raleway, sans-serif;
+    font-size: 30px;
+    font-weight: 900;
+    text-transform: uppercase;
+    position: relative;
+    color: #333;
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+    display: inline-block;
+}
+
+.contentHeader:before,
+.contentHeader:after,
+.mainHeader:before,
+.mainHeader:after {
+    content: "";
+    display: block;
+    height: 3px;
+    background-color: #121517;
+    width: 50%;
+    float: left;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0px auto;
+    margin-top: 2px;
+}
+
+.contentHeader:after,
+.mainHeader:after {
+    width: 65%;
+    background-color: #ff5555;
+    float: left;
+    margin: 1em auto;
+    margin-top: -1.5px;
+}
+
+#offersection {
+    margin-top: 70px;
+    padding: 1em;
+}
+
+.container>.mainHeader,
+.container>.contentHeader {
+    display: inline-block;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background-size: cover !important;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 300px;
+    margin: 18px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+table {
+    margin-top: 1em;
+    border-collapse: collapse;
+    border-style: 3px solid black;
+    border-spacing: 10px !important;
+    border-color: red !important;
+}
+
+th[scope=col] {
+    background-color: #ff5555;
+    color: #FFF;
+    text-align: center;
+}
+
+td,
+th {
+    font-size: 15px;
+    font-weight: 400;
+    color: #666;
+    color: #515A5F;
+    line-height: 25px;
+    text-align: center;
+}
+
+p {
+    font-size: 15px;
+    font-weight: 400;
+    color: #666;
+    color: #515A5F;
+    line-height: 25px;
+}
+
+@media only screen and (min-width: 1200px) {
+    .card {
+        max-width: 30%;
+    }
+}

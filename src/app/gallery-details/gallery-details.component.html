@@ -1,0 +1,15 @@
+<section id="offersection">
+    <div class="container">
+        <header class="section-header">
+            <h3>Astra Luna</h3>
+            <p>Wałecka Szkoła Tańca</p>
+        </header>
+        <div class="row fotocontainer">
+            <ngx-masonry [options]="myOptions" [useImagesLoaded]="true">
+                <div ngxMasonryItem class="masonry-item card" *ngFor="let foto of galleryDetaildList; let i = index" (click)="open(i)"
+                    [style.background]="'url('+ foto.src +')'">
+                </div>
+            </ngx-masonry>
+        </div>
+    </div>
+</section>

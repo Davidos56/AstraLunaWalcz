@@ -1,0 +1,57 @@
+<section id="offersection">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="container" data-aos="fade-right">
+                    <div class="mainHeader">
+                        <h1>{{offerDetails.offerName}}</h1>
+                    </div>
+                </div>
+                <div class="container" *ngFor="let offer of offerDetails.offerBody; let i = index" data-aos="fade-right" data-aos-duration="500" [attr.data-aos-delay]="i*100">
+                    <div class="contentHeader">
+                        <h2>{{offer.head}}</h2>
+                    </div>
+                    <p>{{offer.content}}</p>
+                </div>
+                <div class="container table-responsive-xl">
+                    <div class="contentHeader">
+                        <h2>PLAN</h2>
+                    </div>
+                    <table class="table" data-aos="fade-in">
+                        <thead>
+                            <tr>
+                                <th scope="col">Godziny</th>
+                                <th scope="col">Poniedziałek</th>
+                                <th scope="col">Wtorek</th>
+                                <th scope="col">Środa</th>
+                                <th scope="col">Czwartek</th>
+                                <th scope="col">Piątek</th>
+                                <th scope="col">Adress</th>
+                            </tr>
+                        </thead>
+                        <tbody *ngFor="let offer of offerDetails.offerCalendar;">
+                            <tr>
+                                <th>{{offer.time}}</th>
+                                <th>{{offer.monday}}</th>
+                                <th>{{offer.tuesday}}</th>
+                                <th>{{offer.wednesday}}</th>
+                                <th>{{offer.thursday}}</th>
+                                <th>{{offer.friday}}</th>
+                                <th>{{offer.adress}}</th>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="container">
+                    <div class="contentHeader">
+                        <h2>Zdjęcia</h2>
+                    </div>
+                    <div class="row">
+                        <div *ngFor="let offer of offerDetails.offerImages; let i = index" class="col-md-4 card" data-aos="fade-in" (click)="open(i)" [style.background]="'url('+ offer.src +')'" data-aos="fade-up" data-aos-duration="500" [attr.data-aos-delay]="i*100">
+                            <!-- <img src="assets/images/danuta_antosz_2.jpg" /> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
