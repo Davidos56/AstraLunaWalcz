@@ -36,4 +36,11 @@
             </div>
         </ng-template>
     </div>
+    <div *ngIf="trainer.foto.length > 0" class="container">
+        <div class="rowfoto">
+            <div *ngFor="let foto of trainer.foto; let j = index" class="column" data-aos="fade-in" data-aos="fade-up" data-aos-duration="500" [attr.data-aos-delay]="j*100">
+                <img src="{{foto.src}}" style="width:100%">
+            </div>
+        </div>
+    </div>
 </div>
