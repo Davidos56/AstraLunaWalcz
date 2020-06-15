@@ -10,7 +10,7 @@ p {
 
 blockquote {
     margin: 1em auto;
-    font-size: 1.4em;
+    font-size: 1vw;
     font-family: 'Lora', serif;
     font-style: italic;
     line-height: 1.5;
@@ -20,7 +20,6 @@ blockquote {
     width: 60%;
     min-width: 400px;
     max-width: 820px;
-    font-size: 1.25vw;
     line-height: 1.4;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -51,20 +50,11 @@ blockquote footer:before {
 
 @media screen and (max-width: 1600px) {
     blockquote {
-        font-size: 2vw;
-    }
-}
-
-@media all and (max-width: 1200px) {
-    blockquote {
-        font-size: 2.5vw;
+        font-size: 1.4em;
     }
 }
 
 @media all and (max-width: 600px) {
-    blockquote {
-        font-size: 18px;
-    }
     blockquote {
         width: 100%;
         min-width: 100%;
@@ -88,8 +78,6 @@ blockquote footer:before {
     height: 100%;
     padding: 0;
     float: right;
-    z-index: 9999;
-    max-width: 65% !important;
     z-index: -10;
 }
 
@@ -153,23 +141,15 @@ blockquote footer:before {
 }
 
 .info_content {
-    top: 10vh;
-    left: 2vh;
+    top: 20vh;
     bottom: 2vh;
     margin: 0 auto;
-    position: absolute;
-}
-
-.additional {
-    top: 20vh;
-    width: 60%;
-    margin: 0 auto;
     position: relative;
-    display: block;
 }
 
 .logo_content,
-.quotation {
+.quotation,
+.additional {
     position: relative;
     width: 80%;
     top: 15%;
@@ -177,12 +157,17 @@ blockquote footer:before {
     display: block;
 }
 
-.image {
+.additional svg {
+    width: 60%;
+    top: 15%;
+    left: 25%;
+    position: relative;
+}
+
+.image:not(.png) {
     width: 100%;
-    color: khaki;
     height: auto;
     margin: 10px;
-    fill: black;
 }
 
 #svg {
@@ -251,6 +236,9 @@ blockquote footer:before {
     #slider {
         max-width: 80% !important;
         position: static;
+    }
+    .additional svg {
+        width: 60%;
     }
     .image {
         fill: white;
@@ -378,26 +366,3 @@ blockquote footer:before {
         background-image: url('src/assets/images/2.jpg');
     }
 }
-
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-
-
-/* Medium devices (landscape tablets, 768px and up) */
-
-
-/* HELPERS LINES
-.helperline-red
-{
-    border: solid red 4px;
-}
-
-.helperline-pink
-{
-    border: solid pink 4px;
-}
-
-.helperline-green
-{
-    border: solid green 4px;
-} */

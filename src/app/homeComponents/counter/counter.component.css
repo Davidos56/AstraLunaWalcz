@@ -9,14 +9,15 @@ h3 {
 }
 
 #counter-area {
-    background-color: rgba(0, 0, 255, 0.185);
-    min-height: 25vh;
+    min-height: 30vh;
     text-align: center;
     background: /* top, transparent red, faked with gradient */
     linear-gradient( rgba(0, 153, 255, 0.45), rgba(0, 153, 255, 0.45)), url('src/assets/images/CounterWallper.jpg');
     background-attachment: fixed;
-    background-repeat: no-repeat;
     background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    background-position: 50% 0;
 }
 
 .counter {
@@ -69,4 +70,10 @@ h3 {
 
 .col-md-4 {
     padding: 0px;
+}
+
+@media only screen and (max-width: 768px) {
+    #counter-area {
+        background: rgba(0, 153, 255, 1);
+    }
 }

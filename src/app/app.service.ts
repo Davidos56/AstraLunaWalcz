@@ -11,6 +11,7 @@ import { IGalleryList } from './interface/galleryinterface';
 import { IGalleryDetailsList } from './interface/gallerydetailsInterface';
 import { IAlbum } from 'ngx-lightbox';
 import { ITrainer } from './interface/trainersinterface';
+import { IPartners } from './interface/partners';
 
 
 @Injectable({
@@ -27,11 +28,10 @@ export class AppService {
     
   }
   configUrl = './././assets/json/offerList.json';
-
-  galleryDebugUrl = 'http://localhost:80/astraLunaWalcz/scripts/getGalleryList.php'
   galleryURL = './././scripts/getGalleryList.php';
   galleryDetailsURL = './././scripts/getPhotosList.php?name=';
   trainersList = './././assets/json/trainerList.json'
+  partnersList = './././assets/json/partners.json'
 
 
   getoffer(): Observable<IOffer[]>
@@ -50,7 +50,7 @@ export class AppService {
 
   getGalleryList() : Observable<IGalleryList[]>
   {
-    return this.http.get<IGalleryList[]>(this.galleryDebugUrl);
+    return this.http.get<IGalleryList[]>(this.galleryURL);
   }
 
   getGalleryByName(name) : Observable<IGalleryList>
@@ -65,5 +65,10 @@ export class AppService {
   getTrainersList() : Observable<ITrainer[]>
   {
     return this.http.get<ITrainer[]>(this.trainersList);
+  }
+
+  getPartnersList() : Observable<IPartners[]>
+  {
+    return this.http.get<IPartners[]>(this.partnersList);
   }
 }

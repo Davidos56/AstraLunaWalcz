@@ -8,18 +8,20 @@ import { GalleryComponent } from './gallery/gallery.component';
 import { GalleryDetailsComponent } from './gallery-details/gallery-details.component';
 
 const routes: Routes = [
-  
-  { path: 'home'  ,component: HomeComponent },
+
   { path: 'offer/:id', component : OfferDetailsComponent},
   { path: 'offer', component : OfferComponent},
   { path: 'team', component : TeamComponent},
+  { path: 'team/:id', component : TeamComponent},
   { path: 'gallery',component : GalleryComponent},
+  { path: 'home'  ,component: HomeComponent },
   { path: 'gallery/:name', component : GalleryDetailsComponent},
   { path: '', redirectTo: '/home', pathMatch: 'full' }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes,{useHash:true})],
   exports: [RouterModule]
+  
 })
 export class AppRoutingModule { }

@@ -1,6 +1,7 @@
 import { Component,OnInit } from '@angular/core';
 import * as AOS from 'aos';
 
+declare var $:any;
 
 @Component({
   selector: 'app-root',
@@ -14,5 +15,7 @@ export class AppComponent implements OnInit
     AOS.init({
       once: true
     });
+   
+   
   }
 }

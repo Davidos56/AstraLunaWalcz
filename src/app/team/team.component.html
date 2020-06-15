@@ -1,46 +1,35 @@
-<div *ngFor="let trainer of trainers; let i = index" class="about-area top">
-    <div *ngFor="let content of trainer.content; let j = index">
-        <ng-container [ngTemplateOutlet]="changeOdd ?evenBlock:oddBlock" [ngTemplateOutletContext]=" {trainer:trainer}"></ng-container>
-        <ng-template #evenBlock let-trainer='trainer'>
-            <div class="container">
-                <div class="row ">
-                    <div class="col-lg-4">
-                        <div class="rellax  about-img" data-rellax-speed="7">
-                            <img src="{{content.bigbackgroundString}}">
-                        </div>
-                    </div>
-                    <div class="col-lg-6 offset-lg-1 ">
-                        <div class="rellax about-text ">
-                            <h2 *ngIf="j==0">{{trainer.fullname}}</h2>
-                            {{content.content}}
-                        </div>
-                    </div>
-                </div>
+<div *ngFor="let trainer of trainers; let i = index" class="about-area top" id="{{trainer.id}}">
+    <div class="container content" style="padding-left: 0;">
+        <div class="row align-items-center">
+            <div class="col-lg-4 about-img">
+                <img class="center" src="{{trainer.bigbackgroundString}}">
             </div>
-        </ng-template>
-        <ng-template #oddBlock>
-            <div class="container">
-                <div class="row ">
-                    <div class="col-lg-6 offset-lg-1 ">
-                        <div class="about-text ">
-                            <h2 *ngIf="j==0">{{trainer.fullname}}</h2>
-                            {{content.content}}
-                        </div>
-                    </div>
-                    <div class="col-lg-4 ">
-                        <div class="about-img">
-                            <img src="{{content.bigbackgroundString}}">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </ng-template>
-    </div>
-    <div *ngIf="trainer.foto.length > 0" class="container">
-        <div class="rowfoto">
-            <div *ngFor="let foto of trainer.foto; let j = index" class="column" data-aos="fade-in" data-aos="fade-up" data-aos-duration="500" [attr.data-aos-delay]="j*100">
-                <img src="{{foto.src}}" style="width:100%">
+            <div class="col-lg-8 col-md-12 col-xs-12 about-text align-content-center">
+                <h2 class="center">{{trainer.fullname}}</h2>
             </div>
         </div>
+        <div class="row content-text" style="overflow: auto;">
+            <div *ngFor="let content of trainer.content; let j = index">
+                <ng-container [ngTemplateOutlet]="changeOdd ?evenBlock:oddBlock" [ngTemplateOutletContext]=" {trainer:trainer}"></ng-container>
+                <ng-template #evenBlock let-trainer='trainer'>
+                    <div class="row helperline-red" style="overflow: auto; margin-left:0 ;margin-right:0 ;">
+                        <div class="col-lg-9">{{content.content}}</div>
+                    </div>
+                </ng-template>
+                <ng-template #oddBlock>
+                    <div class="row helperline-red" style="overflow: auto;margin-left:0 ;margin-right:0 ;">
+                        <div class="col-lg-9 offset-lg-3">{{content.content}}</div>
+                    </div>
+                </ng-template>
+            </div>
+            <div *ngIf="trainer.foto.length > 0" class="container">
+                <div class="rowfoto">
+                    <div *ngFor="let foto of trainer.foto; let j = index" class="column" data-aos="fade-in" data-aos="fade-up" data-aos-duration="500" [attr.data-aos-delay]="j*100">
+                        <img src="{{foto.src}}" style="width:100%">
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>

@@ -26,11 +26,10 @@ export class OfferComponent implements OnInit {
     {
       this.service.getoffer().subscribe(x=>this.offers = x.slice(0,this.numbersOfOffers));
     }
-     
   }
 
   onSelect(offer)
   {
-    this.router.navigate(['/offer',offer.id], {state:{...offer}});
+    this.router.navigate(['/offer',offer.id], {state:{offer}});
   }
 }

@@ -4,21 +4,6 @@ p {
     font-family: "Playfair Display";
 }
 
-#counter-area {
-    background-color: rgba(0, 0, 255, 0.185);
-    height: 25vh;
-    background: /* top, transparent red, faked with gradient */
-    linear-gradient( rgba(0, 153, 255, 0.45), rgba(0, 153, 255, 0.45)), url('https://placeimg.com/640/480/any');
-}
-
-#counter-area-astra {
-    background-color: rgba(0, 0, 255, 0.185);
-    height: 50vh;
-    padding-top: 50px;
-    background: /* top, transparent red, faked with gradient */
-    linear-gradient( rgba(255, 51, 0, 0.45), rgba(255, 51, 0, 0.45)), url('https://placeimg.com/640/480/any');
-}
-
 .about-img {
     position: relative;
 }

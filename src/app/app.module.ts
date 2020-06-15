@@ -21,6 +21,8 @@ import { CounterComponent } from './homeComponents/counter/counter.component';
 import { AboutusComponent } from './homeComponents/aboutus/aboutus.component';
 import { TeamSmallComponent } from './homeComponents/team-small/team-small.component';
 import { TeamComponent } from './team/team.component';
+import { AstraGroupComponent } from './homeComponents/astra-group/astra-group.component';
+import { PartnersComponent } from './homeComponents/partners/partners.component';
 
 
 @NgModule({
@@ -38,6 +40,8 @@ import { TeamComponent } from './team/team.component';
     AboutusComponent,
     TeamSmallComponent,
     TeamComponent,
+    AstraGroupComponent,
+    PartnersComponent,
   ],
   imports: [
     BrowserModule,

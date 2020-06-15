@@ -1,117 +1,139 @@
-img {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.about-area {
-    padding-top: 5%;
-    padding-bottom: 5%;
-    min-height: 100vh;
-}
-
-.about-img {
-    position: relative;
-    top: 80px;
-}
-
-.about-img:before {
-    position: absolute;
-    content: '';
-    right: -20px;
-    top: 20px;
-    border: 10px solid #333;
-    width: 100%;
-    height: 100%;
-}
-
-.about-img img {
-    width: 100%;
-}
-
-.about-text {
-    padding-top: 10%;
-    white-space: pre-wrap;
-}
-
-.about-text h2 {
-    text-align: center;
-    font-family: Raleway, sans-serif;
-    font-size: 50px;
-    font-weight: 900;
-    text-transform: uppercase;
-    position: relative;
-    color: #333;
-}
-
-.about-text h2:before,
-.about-text h2:after {
-    content: "";
-    display: block;
-    height: 3px;
-    width: 100%;
-    background-color: #121517;
-    top: 0;
-    left: 0;
-    right: 0;
-    margin: 0px auto;
-    margin-top: 2px;
-}
-
-.about-text h2:after {
-    width: 100%;
-    background-color: #ff5555;
-    margin: 1em auto;
-    margin-top: -1.5px;
-}
-
-.top {
-    box-shadow: inset 0px 0px 60px -11px #888, inset 0px 0px 60px -11px #888;
-}
-
-.rowfoto {
-    display: -ms-flexbox;
-    /* IE10 */
-    display: flex;
-    -ms-flex-wrap: wrap;
-    /* IE10 */
-    flex-wrap: wrap;
-    padding: 0 4px;
-}
-
-
-/* Create four equal columns that sits next to each other */
-
-.column {
-    -ms-flex: 33%;
-    /* IE10 */
-    flex: 33%;
-    max-width: 33%;
-    padding: 0 4px;
-}
-
-.column img {
-    margin-top: 8px;
-    vertical-align: middle;
-    width: 100%;
-}
-
-
-/* Responsive layout - makes a two column-layout instead of four columns */
-
-@media screen and (max-width: 800px) {
-    .column {
-        -ms-flex: 50%;
-        flex: 50%;
-        max-width: 50%;
+    .about-area {
+        min-height: 90vh;
+        position: relative;
+        background: #f0eff0;
     }
-}
-
-
-/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-
-@media screen and (max-width: 600px) {
-    .column {
-        -ms-flex: 100%;
-        flex: 100%;
-        max-width: 100%;
+    
+    .about-area:first-child {
+        margin-top: 70px;
+        top: 0vh
     }
-}
+    
+    .about-img img {
+        width: 25vh;
+        height: auto;
+        border-radius: 50%;
+    }
+    
+    .content {
+        top: 2vh;
+        left: 2vh;
+        right: 2vh;
+        bottom: 2vh;
+        margin: 0 auto;
+        position: relative;
+    }
+    
+    .content-text {
+        position: relative;
+        max-height: 50vh;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .about-text h2 {
+        text-align: center;
+        font-family: Raleway, sans-serif;
+        font-size: 6vh;
+        font-weight: 900;
+        text-transform: uppercase;
+        color: #333;
+        display: table;
+    }
+    
+    .about-text h2:before,
+    .about-text h2:after {
+        content: "";
+        display: block;
+        height: 3px;
+        width: 100%;
+        background-color: #121517;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: 0px auto;
+        margin-top: 2px;
+    }
+    
+    .about-text h2:after {
+        width: 100%;
+        background-color: #ff5555;
+        margin-top: -1.5px;
+    }
+    
+    .row {
+        padding: 1rem;
+    }
+    
+    .row .align-items-center {
+        padding-top: 2.5rem;
+    }
+    
+    .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .rowfoto {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0 4px;
+    }
+    /* Create two equal columns that sits next to each other */
+    
+    .column {
+        flex: 33.3%;
+        padding: 0 4px;
+    }
+    
+    .column img {
+        margin-top: 8px;
+        vertical-align: middle;
+    }
+    
+    .top {
+        box-shadow: inset 0px 0px 60px -11px #888, inset 0px 0px 60px -11px #888;
+    }
+    
+    @media only screen and (max-width: 768px) {
+        .column {
+            flex: 50%;
+        }
+        .content-text {
+            padding: .1rem;
+        }
+        .content-text {
+            position: relative;
+            margin: .1rem;
+        }
+        .row .align-items-center {
+            padding: 0;
+        }
+    }
+    
+    @media only screen and (max-width: 600px) {
+        .column {
+            flex: 100%;
+        }
+        .about-text h2 {
+            font-size: 5vh;
+        }
+    }
+    
+    @media only screen and (max-width: 500px) {
+        .about-text h2 {
+            font-size: 4vh;
+        }
+    }
+    
+    @media only screen and (max-width: 992px) {
+        .col-lg-9 {
+            padding-left: 0;
+            padding-right: 0;
+            margin: 0;
+        }
+        .about-area {
+            min-height: 100vh;
+        }
+    }

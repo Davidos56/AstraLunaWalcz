@@ -29,7 +29,8 @@
                             "node_modules/typeface-playfair-display/index.css",
                             "node_modules/ngx-lightbox/lightbox.css",
                             "node_modules/font-awesome/css/font-awesome.css",
-                            "node_modules/aos/dist/aos.css"
+                            "node_modules/aos/dist/aos.css",
+                            "node_modules/owl.carousel/dist/assets/owl.carousel.min.css"
                         ],
                         "scripts": [
                             "node_modules/jquery/dist/jquery.min.js",
@@ -38,7 +39,8 @@
                             "node_modules/aos/dist/aos.js",
                             "node_modules/waypoints/jquery.waypoints.js",
                             "node_modules/jquery.stellar/jquery.stellar.js",
-                            "node_modules/wow.js/dist/wow.min.js"
+                            "node_modules/wow.js/dist/wow.min.js",
+                            "node_modules/owl.carousel/dist/owl.carousel.min.js"
                         ]
                     },
                     "configurations": {

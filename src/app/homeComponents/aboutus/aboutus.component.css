@@ -1,5 +1,5 @@
 #aboutsection {
-    height: 92vh;
+    height: 100vh;
 }
 
 .content {
@@ -29,7 +29,6 @@ h3 {
 
 .section-header {
     display: inline-block;
-    margin: 10px;
 }
 
 .section-header:before,
@@ -43,7 +42,6 @@ h3 {
     left: 0;
     right: 0;
     margin: 0px auto;
-    margin-top: 2px;
 }
 
 .section-header:after {
@@ -79,4 +77,36 @@ h3 {
 .col-lg-12 {
     margin: 10px;
     padding: 0;
+    font-size: 1vw;
+}
+
+@media only screen and (max-width: 992px) {
+    .col-lg-12 {
+        font-size: 1.5vw;
+        color: #ffffff;
+    }
+    .content-info {
+        width: 100%;
+    }
+    .foto {
+        left: 0%;
+        background-image: /* top, transparent red, faked with gradient */
+        linear-gradient( rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('src/assets/images/turniej.jpg');
+    }
+    .section-header:before,
+    .section-header:after {
+        background-color: #FFFFFF;
+    }
+    .section-header:after {
+        background-color: #FFFFFF;
+    }
+    h3 {
+        color: white;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .col-lg-12 {
+        font-size: 2.8vw;
+    }
 }

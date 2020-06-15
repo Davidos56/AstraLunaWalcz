@@ -1,0 +1,14 @@
+<section id="partnersArea" class="top">
+    <div class="container">
+        <header class="section-header">
+            <h3>PARTNERZY</h3>
+        </header>
+        <div class="row">
+            <div class="owl-carousel owl-theme">
+                <div *ngFor="let partner of partners" class="item card">
+                    <img src="{{partner.src}}">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

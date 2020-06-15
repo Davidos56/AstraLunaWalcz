@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ITrainer } from '../../interface/trainersinterface';
 import { AppService } from 'src/app/app.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-team-small',
@@ -10,7 +11,7 @@ import { AppService } from 'src/app/app.service';
 export class TeamSmallComponent implements OnInit {
 
   public trainers:ITrainer[];
-  constructor(private service: AppService) 
+  constructor(private service: AppService, private router: Router) 
   {
 
    }
@@ -20,4 +21,8 @@ export class TeamSmallComponent implements OnInit {
     this.service.getTrainersList().subscribe(x=> this.trainers = x);
   }
 
+  public GoToTeam(item)
+  {
+    this.router.navigate(['/team',item]);
+  }
 }

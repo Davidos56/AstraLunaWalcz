@@ -28,7 +28,6 @@ export class NavbarComponent implements OnInit {
         else {
           this.sticky = false;
         }
-        console.log(this.href);
       }
     })
   } 
@@ -48,7 +47,6 @@ export class NavbarComponent implements OnInit {
       else {
         this.sticky = false;
       }
-      console.log(verticalOffset, this.sticky, this.href);
     } else {
       this.sticky = true;
     }
