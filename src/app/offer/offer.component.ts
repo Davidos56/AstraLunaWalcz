@@ -12,7 +12,7 @@ export class OfferComponent implements OnInit {
 
   public offers : IOffer[];
   @Input() numbersOfOffers:number;
-  @Input() isShadow:boolean;
+  @Input() isShadow:boolean = false;
 
   constructor( private service: AppService, private router: Router) { }
 

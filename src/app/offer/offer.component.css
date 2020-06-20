@@ -8,12 +8,16 @@ h3 {
     color: #333;
 }
 
+.section-header {
+    display: inline-block;
+}
+
 .section-header:before,
 .section-header:after {
     content: "";
     display: block;
     height: 3px;
-    width: 5%;
+    width: 100%;
     background-color: #121517;
     top: 0;
     left: 0;
@@ -23,14 +27,19 @@ h3 {
 }
 
 .section-header:after {
-    width: 10%;
     background-color: #ff5555;
     margin: 1em auto;
     margin-top: -1.5px;
 }
 
+.padding-add {
+    padding-top: 100px;
+}
+
 #offersection {
-    padding: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-bottom: 1em;
 }
 
 .card {

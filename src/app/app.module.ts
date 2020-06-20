@@ -1,8 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { LightboxModule } from 'ngx-lightbox';
+import { LazyLoadImageModule , ScrollHooks} from 'ng-lazyload-image';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
-import { NgxMasonryModule } from 'ngx-masonry';
+
+
+ 
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -48,8 +51,8 @@ import { PartnersComponent } from './homeComponents/partners/partners.component'
     HttpClientModule,
     AppRoutingModule,
     LightboxModule,
-    NgxMasonryModule,
     AngularFontAwesomeModule,
+    LazyLoadImageModule.forRoot(ScrollHooks),
     CounterModule,
     
   ],

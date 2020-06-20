@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Offer } from './models/offerModel'
 import { OFFERS } from './mock/offer-mock'
 import { IOffer } from './interface/offerInterface'
-import { Observable } from 'rxjs';
+import { Observable, pipe } from 'rxjs';
 import { find ,map, pluck } from 'rxjs/operators';
 import { IOfferDetails } from './interface/offerdetailsInterface';
 import { IGalleryList } from './interface/galleryinterface';
@@ -17,23 +17,28 @@ import { IPartners } from './interface/partners';
 @Injectable({
   providedIn: 'root'
 })
+
+
 export class AppService {
 
  
   public Offer:Observable<IOffer[]>
   public OfferDetail:Observable<IOfferDetails>;
+  gallery :IGalleryList[]
  
   constructor(private http: HttpClient) 
   { 
     
   }
+
+
   configUrl = './././assets/json/offerList.json';
-  galleryURL = './././scripts/getGalleryList.php';
-  galleryDetailsURL = './././scripts/getPhotosList.php?name=';
+  galleryURL = './././assets/json/gallery/getGalleryList';
+  galleryDetailsURL = './././scripts/getPhotosList';
   trainersList = './././assets/json/trainerList.json'
   partnersList = './././assets/json/partners.json'
 
-
+  private env:Enviroment = Enviroment.Dev;
   getoffer(): Observable<IOffer[]>
   {
     return this.http.get<IOffer[]>(this.configUrl)
@@ -50,7 +55,7 @@ export class AppService {
 
   getGalleryList() : Observable<IGalleryList[]>
   {
-    return this.http.get<IGalleryList[]>(this.galleryURL);
+    return this.http.get<IGalleryList[]>(this.GetGallery(this.env));
   }
 
   getGalleryByName(name) : Observable<IGalleryList>
@@ -60,7 +65,7 @@ export class AppService {
 
   getGalleryDetails(path) : Observable<IAlbum[]>
   {
-    return this.http.get<IAlbum[]>(this.galleryDetailsURL + path)
+    return this.http.get<IAlbum[]>(this.GetGalleryDetails(this.env,path))
   }
   getTrainersList() : Observable<ITrainer[]>
   {
@@ -71,4 +76,30 @@ export class AppService {
   {
     return this.http.get<IPartners[]>(this.partnersList);
   }
+
+
+
+  private GetGallery(enviroment: Enviroment): string {
+    switch (enviroment) {
+      case Enviroment.Dev:
+        return "./././assets/json/gallery/galleryList.json";
+      case Enviroment.Prod:
+        return "./././scripts/getGalleryList.php";
+    }
+  }
+
+  private GetGalleryDetails(enviroment: Enviroment, path:string): string {
+    switch (enviroment) {
+      case Enviroment.Dev:
+        return "./././assets/json/gallery/getPhotosList_"+path+".json";
+      case Enviroment.Prod:
+        return "./././scripts/getPhotosList.php?name="+ path;
+    }
+  }
+}
+
+export enum Enviroment 
+{
+  Prod = 0,
+  Dev = 1
 }

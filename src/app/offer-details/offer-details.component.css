@@ -32,7 +32,7 @@
     display: block;
     height: 3px;
     background-color: #121517;
-    width: 50%;
+    width: 100%;
     float: left;
     top: 0;
     left: 0;
@@ -43,7 +43,6 @@
 
 .contentHeader:after,
 .mainHeader:after {
-    width: 65%;
     background-color: #ff5555;
     float: left;
     margin: 1em auto;
@@ -60,16 +59,16 @@
     display: inline-block;
 }
 
-.card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    background-size: cover !important;
-    background-repeat: no-repeat;
-    background-position: center center;
-    height: 100%;
-    margin: 18px;
-    position: relative;
-    overflow: hidden;
-    margin-bottom: 30px;
+.col-lg-4.col-md-6 {
+    padding: 10px;
+}
+
+.col-lg-4.col-md-6 img {
+    width: 100%;
+}
+
+div.container {
+    margin-top: 1rem;
 }
 
 table {
@@ -104,8 +103,12 @@ p {
     line-height: 25px;
 }
 
-@media only screen and (min-width: 1200px) {
-    .card {
-        max-width: 30%;
-    }
+th {
+    background-color: #eaeaea;
+}
+
+th:first-child,
+td:first-child {
+    position: sticky;
+    left: 0px;
 }
