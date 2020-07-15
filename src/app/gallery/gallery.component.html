@@ -1,15 +1,29 @@
-<section id="offersection">
+<section id="gallerysection">
     <div class="container">
         <header class="section-header">
-            <h3>Astra Luna</h3>
-            <p>Wałecka Szkoła Tańca</p>
+            <h3>Galeria</h3>
         </header>
         <div class="row">
-            <div *ngFor="let item of gallery; let i = index"  class="col-md-4" data-aos="fade-up" data-aos-duration="500" [attr.data-aos-delay]="i*100" (click)="onSelect(item)">  
+            <div *ngFor="let item of gallery; let i = index" class="col-md-4 col-lg-4" data-aos="fade-up" data-aos-duration="500" [attr.data-aos-delay]="i*100" (click)="onSelect(item)">
                 <div class="card" [style.background]="'url('+ item.photopath +')'">
                     <div class=content>
                         <div class="container">
-                            <h4><b>{{item.dirname}}</b></h4>
+                            <h4><b>{{item.shortname}}</b></h4>
+                            <h5>{{item.date}}</h5>
+                        </div>
+                        <div class="container-info animated">
+                            <h4><b>{{item.fullname}}</b></h4>
+                            <div class="date_city">
+                                <div>
+                                    <fa width="20px" class="icon" name="calendar" style="color: #FFF;"></fa>
+                                    <h5>{{item.date}}</h5>
+                                </div>
+
+                                <div>
+                                    <fa width="20px" class="icon" name="map-marker" style="color: #FFF;"></fa>
+                                    <h5>{{item.city}}</h5>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

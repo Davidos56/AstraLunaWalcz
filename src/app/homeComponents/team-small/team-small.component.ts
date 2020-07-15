@@ -14,7 +14,7 @@ export class TeamSmallComponent implements OnInit {
   constructor(private service: AppService, private router: Router) 
   {
 
-   }
+  }
 
   ngOnInit() 
   {

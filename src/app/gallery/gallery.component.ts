@@ -3,6 +3,7 @@ import { AppService } from '../app.service';
 import { Router } from '@angular/router';
 import { IGalleryList } from '../interface/galleryinterface';
 
+
 @Component({
   selector: 'app-gallery',
   templateUrl: './gallery.component.html',

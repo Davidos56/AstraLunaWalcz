@@ -1,8 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { LightboxModule } from 'ngx-lightbox';
+import { LazyLoadImageModule , ScrollHooks} from 'ng-lazyload-image';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
-import { NgxMasonryModule } from 'ngx-masonry';
+import { NgxSpinnerModule } from "ngx-spinner";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
+
+
+ 
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -23,6 +28,10 @@ import { TeamSmallComponent } from './homeComponents/team-small/team-small.compo
 import { TeamComponent } from './team/team.component';
 import { AstraGroupComponent } from './homeComponents/astra-group/astra-group.component';
 import { PartnersComponent } from './homeComponents/partners/partners.component';
+import { SpinnerloadingComponent } from './spinnerloading/spinnerloading.component';
+import { CommunicatesComponent } from './communicates/communicates.component';
+import { EventsComponent } from './events/events.component';
+import { EventsDetailsComponent } from './events-details/events-details.component';
 
 
 @NgModule({
@@ -42,15 +51,22 @@ import { PartnersComponent } from './homeComponents/partners/partners.component'
     TeamComponent,
     AstraGroupComponent,
     PartnersComponent,
+    SpinnerloadingComponent,
+    CommunicatesComponent,
+    EventsComponent,
+    EventsDetailsComponent,
+    
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     LightboxModule,
-    NgxMasonryModule,
     AngularFontAwesomeModule,
+    LazyLoadImageModule.forRoot(ScrollHooks),
     CounterModule,
+    NgxSpinnerModule,
+    BrowserAnimationsModule
     
   ],
   providers: [],

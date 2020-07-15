@@ -1,0 +1,25 @@
+.comments h2,
+.comments p {
+    color: #ff5555 !important;
+}
+
+.comments .contentHeader:before {
+    background-color: #ff5555 !important;
+}
+
+.container>.section-header,
+.container>.contentHeader {
+    display: inline-block;
+}
+
+.col-lg-4.col-md-6 {
+    padding: 10px;
+}
+
+.col-lg-4.col-md-6 img {
+    width: 100%;
+}
+
+div.container {
+    margin-top: 1rem;
+}

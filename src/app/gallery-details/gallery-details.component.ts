@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AppService } from '../app.service';
 import { Lightbox, IAlbum } from 'ngx-lightbox';
-import { NgxMasonryOptions } from 'ngx-masonry';
 
 @Component({
   selector: 'app-gallery-details',
@@ -11,38 +10,61 @@ import { NgxMasonryOptions } from 'ngx-masonry';
 })
 export class GalleryDetailsComponent implements OnInit {
 
-  public myOptions: NgxMasonryOptions = 
+  public GalleryName: string;
+  public GalleryDate: string;
+  public GalleryCity: string;
+  private galleryDetaildList : IAlbum[];
+  public galleryFirstColumn : IAlbum[] = [];
+  public gallerySecondColumn : IAlbum[] = [];
+  public galleryThirdColumn : IAlbum[] = [];
+  public galleryFourthColumn : IAlbum[]= [];
+  public scroll$:any;
+  updateSearchResult$: any;
+  scrollAndSearch$: any;
+
+  constructor(private route: ActivatedRoute, private service: AppService  , private lightbox:Lightbox)
   {
-    transitionDuration: '0.2s',
-		gutter: 20,
-		resize: true,
-		initLayout: true,
-		fitWidth: true
-    
+
   }
-  public galleryDetaildList : IAlbum[];
-  constructor(private route: ActivatedRoute, private service: AppService  , private lightbox:Lightbox) { }
 
-  ngOnInit() {
-
+  ngOnInit()
+  {
     let name = this.route.snapshot.paramMap.get('name');
     this.service.getGalleryByName(name).subscribe(x=>
       {
+        this.GalleryName = x.fullname;
+        this.GalleryDate = x.date;
+        this.GalleryCity = x.city;
         this.service.getGalleryDetails(x.dirname).subscribe(y=>
           {
               this.galleryDetaildList = y;
-              console.log(this.galleryDetaildList);
+               this.splitByFourColumns(this.galleryDetaildList);
           });
       })
   }
 
-  open(index: number): void {
-    // open lightbox
-    this.lightbox.open(this.galleryDetaildList, index);
+  private splitByFourColumns(gallery: IAlbum[]) {
+    gallery.forEach((myObject, index) => {
+      if (index % 4 == 0) {
+        this.galleryFirstColumn.push(myObject);
+        return;
+      }
+      if (index % 4 == 1) {
+        this.gallerySecondColumn.push(myObject);
+        return;
+      }
+      if (index % 4 == 2) {
+        this.galleryThirdColumn.push(myObject);
+        return;
+      }
+      if (index % 4 == 3) {
+        this.galleryFourthColumn.push(myObject);
+        return;
+      }
+    });
+   
   }
- 
-  close(): void {
-    // close lightbox programmatically
-    this.lightbox.close();
-  }
+
 }
+
+

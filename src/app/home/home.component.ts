@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 declare var $:any;
 
 @Component({
@@ -6,21 +6,14 @@ declare var $:any;
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit, AfterViewInit , OnDestroy {
+export class HomeComponent implements OnInit {
   constructor() {
-  }
-  ngOnDestroy(): void {
-    $.stellar("destroy");
-  }
-  ngAfterViewInit(): void {
-   
-  }
+  
+ 
 
+  }
   ngOnInit() 
   {
-    $(window).stellar({
-      horizontalScrolling: false,
-      verticalOffset: 0
-  });
+    
   }
 }

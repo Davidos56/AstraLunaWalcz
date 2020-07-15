@@ -1,22 +1,115 @@
 /* You can add global styles to this file, and also import other style files */
+
 @import './assets/css/animate.css';
 @import 'owl.carousel/dist/assets/owl.carousel.css';
-body
-{
+body {
     background-color: #eaeaea !important;
     font-family: "Playfair Display";
 }
-section
-{
+
+section {
     position: relative;
-    display: block;  
+    display: block;
 }
+
 .animated {
     visibility: visible !important;
 }
+
 .hide-on-init {
     visibility: hidden;
 }
 
 
+/* Secttion */
 
+.alw-section {
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-bottom: 1em;
+    padding-top: 100px;
+    min-height: 100vh;
+}
+
+
+/* Nagłówki */
+
+.section-header>h1,
+.content-header>h2 {
+    text-align: center;
+    font-family: Raleway, sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    position: relative;
+    color: #333;
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+    display: inline-block;
+}
+
+.section-header>h1 {
+    font-size: 30px;
+}
+
+.content-header>h2 {
+    font-size: 24px;
+}
+
+.section-header:before,
+.section-header:after {
+    content: "";
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: #121517;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0px auto;
+    margin-top: 2px;
+}
+
+.section-header:after {
+    background-color: #ff5555;
+    margin: 1em auto;
+    margin-top: -1.5px;
+}
+
+.content-header:before,
+.content-header:after,
+.section-header:before,
+.section-header:after {
+    content: "";
+    display: block;
+    height: 3px;
+    background-color: #121517;
+    width: 100%;
+    float: left;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0px auto;
+    margin-top: 2px;
+}
+
+.content-header:after,
+.section-header:after {
+    background-color: #ff5555;
+    float: left;
+    margin: 1em auto;
+    margin-top: -1.5px;
+}
+
+.section-header,
+.content-header {
+    display: inline-block;
+}
+
+.front {
+    min-height: 25vh;
+    padding: 1rem;
+}
+
+.alw-shadow {
+    box-shadow: inset 0px 0px 60px -11px #888, inset 0px 0px 60px -11px #888 !important;
+}

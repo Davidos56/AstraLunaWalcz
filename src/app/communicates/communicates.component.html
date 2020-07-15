@@ -1,0 +1,18 @@
+<section id="messagessection" class="alw-section" [ngClass]="{ 'front':onFront , 'alw-shadow':isShadow}">
+    <div class="container" data-aos="fade-right">
+        <header class="section-header">
+            <h1>Komunikaty</h1>
+        </header>
+    </div>
+    <div class="container">
+        <app-spinnerloading *ngIf="showSpinner" style="margin: auto;"></app-spinnerloading>
+        <div class="row" *ngIf="!showSpinner">
+            <div *ngFor="let message of messages; let i = index" class="col-xl-12" data-aos="fade-right" data-aos-duration="500" [attr.data-aos-delay]="i*100">
+                <div class="content-header">
+                    <h2>{{message.date}} - {{message.title}}</h2>
+                </div>
+                <p>{{message.content}}</p>
+            </div>
+        </div>
+    </div>
+</section>

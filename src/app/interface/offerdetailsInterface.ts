@@ -11,6 +11,7 @@ export interface IOfferDetails
 
 export interface IBodyDetails
 {
+    date:Date;
     head:string;
     content:string;
 }

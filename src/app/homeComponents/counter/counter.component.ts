@@ -16,7 +16,6 @@ export class CounterComponent implements OnInit {
 
   ngOnInit() 
   {
-
     const el1 = document.querySelector('.counter1')
     const el2 = document.querySelector('.counter2')
     const el3 = document.querySelector('.counter3')

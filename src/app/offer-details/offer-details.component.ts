@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AppService } from '../app.service';
-import { IOfferDetails } from '../interface/offerdetailsInterface';
-import { Lightbox } from 'ngx-lightbox';
+import { IOfferDetails, IBodyDetails, ICalendarDetails } from '../interface/offerdetailsInterface';
+import { Lightbox, IAlbum } from 'ngx-lightbox';
 
 @Component({
   selector: 'app-offer-details',
@@ -13,26 +13,41 @@ export class OfferDetailsComponent implements OnInit {
 
   public offerId
   public offerDetails :IOfferDetails;
+  public offerBody :IBodyDetails[];
+  public offerCalendar : ICalendarDetails[];
+  public offerImages :IAlbum[];
+  public offerComments :IBodyDetails;
+  public offerName: string;
+  public showComments: boolean;
+  public showCalendar: boolean;
+  public showSpinner:boolean = false;
   constructor(private route: ActivatedRoute, private service: AppService  , private lightbox:Lightbox) { }
 
-  ngOnInit() {
+  ngOnInit() 
+  {
+    this.showSpinner = true;
     let id = this.route.snapshot.paramMap.get('id');
     this.offerId = id;
-    this.service.getOfferById(id)
-      .subscribe(arg => {
-        this.service.getOfferDetails(arg.path).subscribe(x => {
+    this.service.getOfferDetails(id)
+      .subscribe(x => {
           this.offerDetails = x;
-        });
+          this.offerName = x.offerName;
+          this.offerComments = x.offerComments;
+          this.showComments = this.offerComments.content != "";
+          this.offerBody = x.offerBody;
+
+          this.offerCalendar = x.offerCalendar;
+          this.showCalendar = x.offerCalendar.length != 0;
+          this.offerImages = x.offerImages;
+          this.showSpinner = false;
       });
   }
 
-  open(index: number): void {
-    // open lightbox
-    this.lightbox.open(this.offerDetails.offerImages, index);
-  }
+  // open(index: number): void {
+  //   this.lightbox.open(this.offerDetails.offerImages, index);
+  // }
  
-  close(): void {
-    // close lightbox programmatically
-    this.lightbox.close();
-  }
+  // close(): void {
+  //   this.lightbox.close();
+  // }
 }
