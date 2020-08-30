@@ -1,0 +1,21 @@
+<section id="branchsection" class="alw-section">
+    <div class="container" data-aos="fade-right">
+        <header class="section-header">
+            <h1>Filie</h1>
+        </header>
+    </div>
+    <div class="container">
+        <app-spinnerloading *ngIf="showSpinner" style="margin: auto;"></app-spinnerloading>
+        <div class="row" *ngIf="!showSpinner">
+            <div *ngFor="let branch of branches; let i = index" class="col-md-6 col-xl-4" data-aos="fade-up" data-aos-duration="500" [attr.data-aos-delay]="i*50" (click)="onSelect(branch)">
+                <div class="card" [style.backgroundImage]="'url('+ branch.foto +')'">
+                    <div class=content>
+                        <div class="container-info animated">
+                            <h4><b>{{branch.name}}</b></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

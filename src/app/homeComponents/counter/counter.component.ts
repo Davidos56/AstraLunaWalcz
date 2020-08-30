@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener, Input } from '@angular/core';
 import counterUp from 'counterup2';
 import { ViewportScroller } from '@angular/common';
 
@@ -11,7 +11,7 @@ declare const Waypoint: any;
   styleUrls: ['./counter.component.css']
 })
 export class CounterComponent implements OnInit {
-
+  @Input() onFront:boolean = false;
   constructor(viewportScroller: ViewportScroller) { }
 
   ngOnInit() 

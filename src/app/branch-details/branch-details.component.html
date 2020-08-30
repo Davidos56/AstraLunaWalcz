@@ -1,0 +1,67 @@
+<section id="branchsection" class="alw-section">
+    <div class="container" data-aos="fade-right">
+        <header class="section-header">
+            <h1>{{branchName}}</h1>
+        </header>
+    </div>
+    <div class="container">
+        <app-spinnerloading *ngIf="showSpinner" style="margin: auto;"></app-spinnerloading>
+        <div class="row" *ngIf="!showSpinner">
+            <div class="col-md-12 col-xl-12" data-aos="fade-up" data-aos-duration="500" [attr.data-aos-delay]="i*100">
+                <div class="table-responsive-xl">
+                    <table class="table" data-aos="fade-in">
+                        <thead>
+                            <tr>
+                                <th class="fixed-column" scope="col">Godziny</th>
+                                <th scope="col">Poniedziałek</th>
+                                <th scope="col">Wtorek</th>
+                                <th scope="col">Środa</th>
+                                <th scope="col">Czwartek</th>
+                                <th scope="col">Piątek</th>
+                            </tr>
+                        </thead>
+                        <tbody *ngFor="let branch of branchCalendar;">
+                            <tr>
+                                <td>{{branch.time}}</td>
+                                <td>
+                                    <div class="celldetails" *ngFor="let details of branch.monday;">
+                                        <p>{{details.name}} </p>
+                                        <p class="group" [ngStyle]="{color: getColor(details.group)}">{{details.group}}</p>
+                                        <p>{{details.adress}}</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="celldetails" *ngFor="let details of branch.tuesday;">
+                                        <p>{{details.name}} </p>
+                                        <p class="group" [ngStyle]="{color: getColor(details.group)}">{{details.group}}</p>
+                                        <p>{{details.adress}}</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="celldetails" *ngFor="let details of branch.wednesday;">
+                                        <p>{{details.name}} </p>
+                                        <p class="group" [ngStyle]="{color: getColor(details.group)}">{{details.group}}</p>
+                                        <p>{{details.adress}}</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="celldetails" *ngFor="let details of branch.thursday;">
+                                        <p>{{details.name}} </p>
+                                        <p class="group" [ngStyle]="{color: getColor(details.group)}">{{details.group}}</p>
+                                        <p>{{details.adress}}</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="celldetails" *ngFor="let details of branch.friday;">
+                                        <p>{{details.name}} </p>
+                                        <p class="group" [ngStyle]="{color: getColor(details.group)}">{{details.group}}</p>
+                                        <p>{{details.adress}}</p>
+                                    </div>
+                                </td>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

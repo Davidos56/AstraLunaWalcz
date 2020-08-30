@@ -16,6 +16,12 @@ export interface IBodyDetails
     content:string;
 }
 
+export interface IBranchDetails
+{
+    name: string;
+    schedule: IBranchCalendarDetails[];
+}
+
 export interface ICalendarDetails
 {
     time:string;
@@ -25,4 +31,21 @@ export interface ICalendarDetails
     thursday:string;	
     friday:string;
     adress:string;
+}
+
+export interface IBranchCalendarDetails
+{
+    time:string;
+    monday: IBranchDay[];
+    tuesday:IBranchDay[];	
+    wednesday:IBranchDay[];	
+    thursday:IBranchDay[];	
+    friday:IBranchDay[];
+}
+
+export interface IBranchDay
+{
+    name: string;
+    group: string;
+    adress: string;
 }

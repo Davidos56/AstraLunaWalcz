@@ -61,6 +61,10 @@ blockquote footer:before {
     }
 }
 
+.imageWhite {
+    display: none;
+}
+
 #welcomesection {
     height: 100vh;
 }
@@ -157,7 +161,7 @@ blockquote footer:before {
     display: block;
 }
 
-.additional svg {
+.additional img {
     width: 60%;
     top: 15%;
     left: 25%;
@@ -170,10 +174,6 @@ blockquote footer:before {
     margin: 10px;
 }
 
-#svg {
-    fill: red;
-}
-
 .logo_content:before {
     content: "";
     display: block;
@@ -183,7 +183,7 @@ blockquote footer:before {
     top: 0;
     left: 0;
     right: 0;
-    margin: 0px auto;
+    margin-bottom: 5px;
 }
 
 .logo_content:after {
@@ -237,7 +237,7 @@ blockquote footer:before {
         max-width: 80% !important;
         position: static;
     }
-    .additional svg {
+    .additional img {
         width: 60%;
     }
     .image {
@@ -261,6 +261,12 @@ blockquote footer:before {
     .crossfade>figure:nth-child(4) {
         animation-delay: 18s;
         background-image: url('src/assets/images/2.jpg');
+    }
+    .imageBlack {
+        display: none;
+    }
+    .imageWhite {
+        display: block;
     }
 }
 

@@ -1,0 +1,67 @@
+table {
+    margin-top: 1em;
+    border-collapse: collapse;
+    border-style: 3px solid black;
+    border-spacing: 10px !important;
+    border-color: red !important;
+}
+
+th[scope=col] {
+    background-color: #ff5555;
+    color: #FFF;
+    text-align: center;
+}
+
+td,
+th {
+    font-size: 15px;
+    font-weight: 400;
+    color: #666;
+    color: #515A5F;
+    line-height: 25px;
+    text-align: center;
+}
+
+p {
+    font-size: 15px;
+    font-weight: 400;
+    color: #666;
+    color: #515A5F;
+    line-height: 25px;
+    white-space: pre-line;
+}
+
+td {
+    background-color: #eaeaea;
+    max-width: 200px;
+    min-width: 150px;
+}
+
+th:first-child,
+td:first-child {
+    position: sticky;
+    left: 0px;
+}
+
+.celldetails p {
+    margin: 0;
+}
+
+.celldetails p:first-child {
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    word-wrap: break-word;
+}
+
+.group {
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: uppercase;
+    word-wrap: break-word;
+}
+
+.celldetails {
+    margin-bottom: 15px;
+    word-wrap: break-word;
+}

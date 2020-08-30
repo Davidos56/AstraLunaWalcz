@@ -1,9 +1,12 @@
-<section id="counter-area-astra">
-    <div class="container">
+<section id="counter-area-astra" class="alw-section" [ngClass]="{ 'front':onFront , 'alw-shadow':isShadow}">
+    <div class="container" data-aos="fade-right">
         <header class="section-header">
             <h1>GRUPA ASTRA</h1>
         </header>
-        <div class="row">
+    </div>
+    <div class="container">
+        <app-spinnerloading *ngIf="showSpinner" style="margin: auto;"></app-spinnerloading>
+        <div class="row" *ngIf="!showSpinner">
             <div class="col-md-4">
                 <div class="counter_item text-center" data-aos="fade-up" data-aos-duration="500" data-aos-delay="100">
                     <img src="assets/images/herbs/herb_astra_szczecin.png">

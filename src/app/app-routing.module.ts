@@ -8,11 +8,15 @@ import { OfferDetailsComponent } from './offer-details/offer-details.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { GalleryDetailsComponent } from './gallery-details/gallery-details.component';
 import { CommunicatesComponent } from './communicates/communicates.component';
+import { BranchComponent } from './branch/branch.component';
+import { BranchDetailsComponent } from './branch-details/branch-details.component';
 
 const routes: Routes = [
 
   { path: 'offer/:id', component : OfferDetailsComponent},
   { path: 'offer', component : OfferComponent},
+  { path: 'branch', component : BranchComponent},
+  { path: 'branch/:id', component : BranchDetailsComponent},
   { path: 'team', component : TeamComponent},
   { path: 'communicates', component : CommunicatesComponent},
   { path: 'events', component : EventsComponent},

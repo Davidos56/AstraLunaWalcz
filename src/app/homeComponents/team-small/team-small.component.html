@@ -1,9 +1,12 @@
-<section id="team" class="top">
-    <div class="container">
-        <header class="section-header" style="text-align: center">
-            <h3>Trenerzy</h3>
+<section id="team" class="alw-section" [ngClass]="{ 'front':onFront , 'alw-shadow':isShadow}">
+    <div class="container" data-aos="fade-right">
+        <header class="section-header">
+            <h1>Trenerzy</h1>
         </header>
-        <div class="row">
+    </div>
+    <div class="container">
+        <app-spinnerloading *ngIf="showSpinner" style="margin: auto;"></app-spinnerloading>
+        <div class="row" *ngIf="!showSpinner">
             <div *ngFor="let trainer of trainers; let i = index" class="col-lg-3 col-md-6 wow fadeInUp" data-aos="fade-up" style="visibility: visible; animation-name: fadeInUp;" data-aos-duration="500" [attr.data-aos-delay]="i*100">
                 <div class="member">
                     <img src="{{trainer.smallbackgroundString}}" class="img-fluid" alt="">

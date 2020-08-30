@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ITrainer } from '../../interface/trainersinterface';
 import { AppService } from 'src/app/app.service';
 import { Router } from '@angular/router';
@@ -11,6 +11,9 @@ import { Router } from '@angular/router';
 export class TeamSmallComponent implements OnInit {
 
   public trainers:ITrainer[];
+
+  @Input() isShadow:boolean = false;
+  @Input() onFront:boolean = false;
   constructor(private service: AppService, private router: Router) 
   {
 

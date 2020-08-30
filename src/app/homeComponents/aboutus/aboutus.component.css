@@ -27,6 +27,12 @@ h3 {
     color: #333;
 }
 
+.bcg {
+    position: inherit;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(234, 234, 234, 1) 50%, rgba(234, 234, 234, 0) 70%);
+}
+
 .section-header {
     display: inline-block;
 }
@@ -61,7 +67,8 @@ h3 {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: linear-gradient(90deg, rgba(234, 234, 234, 1) 10%, rgba(234, 234, 234, 0) 30%), url('src/assets/images/turniej.jpg');
+    background-image: url('src/assets/images/turniej.jpg');
+    z-index: -999;
 }
 
 .foto-content {
@@ -75,14 +82,14 @@ h3 {
 }
 
 .col-lg-12 {
-    margin: 10px;
+    margin: 10px 0px;
     padding: 0;
-    font-size: 1vw;
+    font-size: 1.1vw;
 }
 
 @media only screen and (max-width: 992px) {
     .col-lg-12 {
-        font-size: 1.5vw;
+        font-size: 1.8vw;
         color: #ffffff;
     }
     .content-info {
@@ -108,5 +115,11 @@ h3 {
 @media only screen and (max-width: 767px) {
     .col-lg-12 {
         font-size: 2.8vw;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .col-lg-12 {
+        font-size: 12px;
     }
 }
