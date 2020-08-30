@@ -6,13 +6,14 @@ import { OFFERS } from './mock/offer-mock'
 import { IOffer } from './interface/offerInterface'
 import { Observable, pipe } from 'rxjs';
 import { find ,map, pluck } from 'rxjs/operators';
-import { IOfferDetails } from './interface/offerdetailsInterface';
+import { IOfferDetails, ICalendarDetails, IBranchDetails } from './interface/offerdetailsInterface';
 import { IGalleryList } from './interface/galleryinterface';
 import { IGalleryDetailsList } from './interface/gallerydetailsInterface';
 import { IAlbum } from 'ngx-lightbox';
 import { ITrainer } from './interface/trainersinterface';
 import { IPartners } from './interface/partners';
 import { IMessages } from './interface/Imessages';
+import { IBranchList } from './interface/IBranch';
 
 
 @Injectable({
@@ -35,6 +36,8 @@ export class AppService {
   messagesUrl ="http://astraluna.pl/AstraLunaAdminPage/wp-json/alw/v1/messages";
   configUrl = 'http://astraluna.pl/AstraLunaAdminPage/wp-json/alw/v1/offersList';
   offerDetailsUrl = 'http://astraluna.pl/AstraLunaAdminPage/wp-json/alw/v1/getOffersDetails/';
+  branchesURL = 'http://astraluna.pl/AstraLunaAdminPage/wp-json/alw/v1/getBranches';
+  branchDetailsURL = 'http://astraluna.pl/AstraLunaAdminPage/wp-json/alw/v1/getBranchById/';
   galleryURL = './././assets/json/gallery/getGalleryList';
   galleryDetailsURL = './././scripts/getPhotosList';
   trainersList = './././assets/json/trainerList.json'
@@ -44,6 +47,16 @@ export class AppService {
   getoffer(): Observable<IOffer[]>
   {
     return this.http.get<IOffer[]>(this.configUrl)
+  }
+
+  getbranches(): Observable<IBranchList[]>
+  {
+    return this.http.get<IBranchList[]>(this.branchesURL)
+  }
+
+  getbranch(id): Observable<IBranchDetails>
+  {
+    return this.http.get<IBranchDetails>(this.branchDetailsURL + id)
   }
 
   getOfferDetails(id): Observable<IOfferDetails>
@@ -79,6 +92,7 @@ export class AppService {
   {
     return this.http.get<IMessages[]>(this.messagesUrl);
   }
+
 
 
 

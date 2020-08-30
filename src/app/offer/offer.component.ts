@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { AppService } from '../app.service';
-import { Router,} from '@angular/router';
+import { Router, } from '@angular/router';
 import { IOffer } from '../interface/offerInterface';
 import { NgxSpinnerService } from "ngx-spinner";
 
@@ -11,40 +11,31 @@ import { NgxSpinnerService } from "ngx-spinner";
 })
 export class OfferComponent implements OnInit {
 
-  public offers : IOffer[];
-  @Input() numbersOfOffers:number;
-  @Input() isShadow:boolean = false;
-  @Input() onFront:boolean = false;
-  public showSpinner:boolean = false;
+  public offers: IOffer[];
+  @Input() numbersOfOffers: number;
+  @Input() isShadow: boolean = false;
+  @Input() onFront: boolean = false;
+  public showSpinner: boolean = false;
 
-  constructor( private service: AppService, private router: Router, private spinner: NgxSpinnerService) { }
+  constructor(private service: AppService, private router: Router, private spinner: NgxSpinnerService) { }
 
-  ngOnInit() 
-  {  
+  ngOnInit() {
     this.showSpinner = true;
-    if(this.numbersOfOffers == 0)
-    {
-      this.service.getoffer().subscribe(x=>
-        {
-          setTimeout(() => {
-            this.showSpinner = false;
-          }, 5000);
-        });
-    } 
-    else
-    {
-      this.service.getoffer().subscribe(x=>
-        {
-          this.offers = x.slice(0,this.numbersOfOffers);
-        
-            this.showSpinner = false;
-        
-        });
+    if (this.numbersOfOffers == 0) {
+      this.service.getoffer().subscribe(x => {
+        this.offers = x;
+        this.showSpinner = false;
+      });
+    }
+    else {
+      this.service.getoffer().subscribe(x => {
+        this.offers = x.slice(0, this.numbersOfOffers);
+        this.showSpinner = false;
+      });
     }
   }
 
-  onSelect(offer)
-  {
-    this.router.navigate(['/offer',offer.id], {state:{offer}});
+  onSelect(offer) {
+    this.router.navigate(['/offer', offer.id], { state: { offer } });
   }
 }

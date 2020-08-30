@@ -8,14 +8,12 @@
                         <h1>{{offerName}}</h1>
                     </div>
                 </div>
-
                 <div *ngIf="showComments" class="container comments" data-aos="fade-right" data-aos-duration="500" [attr.data-aos-delay]="i*100">
                     <div class="contentHeader comments">
                         <h2>{{offerComments.head}}</h2>
                     </div>
                     <p>{{offerComments.content}}</p>
                 </div>
-
                 <div class="container" *ngFor="let offer of offerBody; let i = index" data-aos="fade-right" data-aos-duration="500" [attr.data-aos-delay]="i*100">
                     <div class="contentHeader">
                         <h2>{{offer.head}}</h2>
@@ -23,42 +21,42 @@
                     <p>{{offer.content}}</p>
                 </div>
                 <div *ngIf="showCalendar" class="container">
-                    <div class="contentHeader">
-                        <h2>PLAN</h2>
+                    <div class="container">
+                        <div class="contentHeader">
+                            <h2>PLAN</h2>
+                        </div>
+                        <div class="table-responsive-xl">
+                            <table class="table" data-aos="fade-in">
+                                <thead>
+                                    <tr>
+                                        <th class="fixed-column" scope="col">Godziny</th>
+                                        <th scope="col">Poniedziałek</th>
+                                        <th scope="col">Wtorek</th>
+                                        <th scope="col">Środa</th>
+                                        <th scope="col">Czwartek</th>
+                                        <th scope="col">Piątek</th>
+                                    </tr>
+                                </thead>
+                                <tbody *ngFor="let offer of offerCalendar;">
+                                    <tr>
+                                        <th>{{offer.time}}</th>
+                                        <th>{{offer.monday}}</th>
+                                        <th>{{offer.tuesday}}</th>
+                                        <th>{{offer.wednesday}}</th>
+                                        <th>{{offer.thursday}}</th>
+                                        <th>{{offer.friday}}</th>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
-                    <div class="table-responsive-xl">
-                        <table class="table" data-aos="fade-in">
-                            <thead>
-                                <tr>
-                                    <th class="fixed-column" scope="col">Godziny</th>
-                                    <th scope="col">Poniedziałek</th>
-                                    <th scope="col">Wtorek</th>
-                                    <th scope="col">Środa</th>
-                                    <th scope="col">Czwartek</th>
-                                    <th scope="col">Piątek</th>
-                                    <th scope="col">Adress</th>
-                                </tr>
-                            </thead>
-                            <tbody *ngFor="let offer of offerCalendar;">
-                                <tr>
-                                    <th>{{offer.time}}</th>
-                                    <th>{{offer.monday}}</th>
-                                    <th>{{offer.tuesday}}</th>
-                                    <th>{{offer.wednesday}}</th>
-                                    <th>{{offer.thursday}}</th>
-                                    <th>{{offer.friday}}</th>
-                                    <th>{{offer.adress}}</th>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="contentHeader">
-                        <h2>Zdjęcia</h2>
-                    </div>
-                    <div class="row">
-                        <div *ngFor="let offer of offerImages; let i = index" class="col-lg-4 col-md-6" data-aos="fade-in" (click)="open(i)" data-aos="fade-up" data-aos-duration="500" [attr.data-aos-delay]="i*100">
-                            <img src="{{offer.src}}" />
+                    <div class="container">
+                        <div class="contentHeader">
+                            <h2>Zdjęcia</h2>
+                        </div>
+                        <div class="row">
+                            <div *ngFor="let offer of offerImages; let i = index" class="col-lg-4 col-md-6" data-aos="fade-in" (click)="open(i)" data-aos="fade-up" data-aos-duration="500" [attr.data-aos-delay]="i*100">
+                                <img src="{{offer.src}}" />
+                            </div>
                         </div>
                     </div>
                 </div>

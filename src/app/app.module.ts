@@ -32,6 +32,8 @@ import { SpinnerloadingComponent } from './spinnerloading/spinnerloading.compone
 import { CommunicatesComponent } from './communicates/communicates.component';
 import { EventsComponent } from './events/events.component';
 import { EventsDetailsComponent } from './events-details/events-details.component';
+import { BranchComponent } from './branch/branch.component';
+import { BranchDetailsComponent } from './branch-details/branch-details.component';
 
 
 @NgModule({
@@ -55,6 +57,8 @@ import { EventsDetailsComponent } from './events-details/events-details.componen
     CommunicatesComponent,
     EventsComponent,
     EventsDetailsComponent,
+    BranchComponent,
+    BranchDetailsComponent,
     
   ],
   imports: [

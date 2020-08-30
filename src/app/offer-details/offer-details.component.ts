@@ -16,6 +16,7 @@ export class OfferDetailsComponent implements OnInit {
   public offerBody :IBodyDetails[];
   public offerCalendar : ICalendarDetails[];
   public offerImages :IAlbum[];
+
   public offerComments :IBodyDetails;
   public offerName: string;
   public showComments: boolean;
@@ -39,15 +40,9 @@ export class OfferDetailsComponent implements OnInit {
           this.offerCalendar = x.offerCalendar;
           this.showCalendar = x.offerCalendar.length != 0;
           this.offerImages = x.offerImages;
+          console.log(this.offerImages);
           this.showSpinner = false;
       });
   }
 
-  // open(index: number): void {
-  //   this.lightbox.open(this.offerDetails.offerImages, index);
-  // }
- 
-  // close(): void {
-  //   this.lightbox.close();
-  // }
 }

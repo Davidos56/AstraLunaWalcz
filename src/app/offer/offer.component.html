@@ -1,4 +1,4 @@
-<section id="offersection" class="alw-section" [ngClass]="{ 'front':onFront , 'alw-shadow':isShadow}">
+<section id="offerssection" class="alw-section" [ngClass]="{ 'front':onFront , 'alw-shadow':isShadow}">
     <div class="container" data-aos="fade-right">
         <header class="section-header">
             <h1>Oferty</h1>
@@ -7,7 +7,6 @@
     <div class="container">
         <app-spinnerloading *ngIf="showSpinner" style="margin: auto;"></app-spinnerloading>
         <div class="row" *ngIf="!showSpinner">
-
             <div *ngFor="let offer of offers; let i = index" class="col-md-6 col-xl-4" data-aos="fade-up" data-aos-duration="500" [attr.data-aos-delay]="i*100" (click)="onSelect(offer)">
                 <div class="card" [style.backgroundImage]="'url('+ offer.backgroundString +')'">
                     <div class=content>
