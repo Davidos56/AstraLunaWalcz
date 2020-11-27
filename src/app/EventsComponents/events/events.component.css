@@ -1,0 +1,101 @@
+.container>.contentHeader>h2,
+.eventcontent>h2 {
+    text-align: center;
+    font-family: Raleway, sans-serif;
+    font-size: 24px;
+    font-weight: 900;
+    text-transform: uppercase;
+    position: relative;
+    color: #333;
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+}
+
+.container>.mainHeader>h1,
+.eventcontent>h1 {
+    text-align: center;
+    font-family: Raleway, sans-serif;
+    font-size: 30px;
+    font-weight: 900;
+    text-transform: uppercase;
+    position: relative;
+    color: #333;
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+}
+
+.comments h2,
+.comments p {
+    color: #ff5555 !important;
+}
+
+.comments .contentHeader:before {
+    background-color: #ff5555 !important;
+}
+
+.contentHeader:before,
+.contentHeader:after,
+.mainHeader:before,
+.mainHeader:after {
+    content: "";
+    display: block;
+    height: 3px;
+    background-color: #121517;
+    width: 100%;
+    float: left;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0px auto;
+    margin-top: 2px;
+}
+
+.contentHeader:after,
+.mainHeader:after {
+    background-color: #ff5555;
+    float: left;
+    margin: 1em auto;
+    margin-top: -1.5px;
+}
+
+#offersection {
+    margin-top: 70px;
+    padding: 1em;
+    min-height: 100vh;
+}
+
+.container>.mainHeader,
+.container>.contentHeader {
+    display: inline-block;
+}
+
+.col-lg-4.col-md-6 {
+    padding: 10px;
+}
+
+.col-lg-4.col-md-6 img {
+    width: 100%;
+}
+
+div.container {
+    margin-top: 1rem;
+}
+
+p {
+    font-size: 15px;
+    font-weight: 400;
+    color: #666;
+    color: #515A5F;
+    line-height: 25px;
+}
+
+.container {
+    padding: 2px 16px;
+}
+
+.event-list {
+    list-style: none;
+    font-family: 'Lato', sans-serif;
+    margin: 0px;
+    padding: 0px;
+}

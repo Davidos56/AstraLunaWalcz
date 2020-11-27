@@ -1,10 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { LightboxModule } from 'ngx-lightbox';
-import { LazyLoadImageModule , ScrollHooks} from 'ng-lazyload-image';
+import { LazyLoadImageModule } from 'ng-lazyload-image'; // <-- include ScrollHooks
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
-import { NgxSpinnerModule } from "ngx-spinner";
+import { NgxSpinnerModule,  } from "ngx-spinner";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
+import { NgMasonryGridModule } from 'ng-masonry-grid';
+
 
 
  
@@ -30,10 +32,13 @@ import { AstraGroupComponent } from './homeComponents/astra-group/astra-group.co
 import { PartnersComponent } from './homeComponents/partners/partners.component';
 import { SpinnerloadingComponent } from './spinnerloading/spinnerloading.component';
 import { CommunicatesComponent } from './communicates/communicates.component';
-import { EventsComponent } from './events/events.component';
-import { EventsDetailsComponent } from './events-details/events-details.component';
+import { EventsComponent } from './EventsComponents/events/events.component';
+import { EventsDetailsComponent } from './EventsComponents/events-details/events-details.component';
 import { BranchComponent } from './branch/branch.component';
 import { BranchDetailsComponent } from './branch-details/branch-details.component';
+import { NgxMasonryModule } from 'ngx-masonry';
+import { LazyLoadImgDirective } from './directives/lazy-load-img.directive';
+import { EventItemComponent } from './EventsComponents/event-item/event-item.component';
 
 
 @NgModule({
@@ -59,7 +64,8 @@ import { BranchDetailsComponent } from './branch-details/branch-details.componen
     EventsDetailsComponent,
     BranchComponent,
     BranchDetailsComponent,
-    
+    LazyLoadImgDirective,
+    EventItemComponent,    
   ],
   imports: [
     BrowserModule,
@@ -67,7 +73,9 @@ import { BranchDetailsComponent } from './branch-details/branch-details.componen
     AppRoutingModule,
     LightboxModule,
     AngularFontAwesomeModule,
-    LazyLoadImageModule.forRoot(ScrollHooks),
+    LazyLoadImageModule,
+    NgxMasonryModule,
+    NgMasonryGridModule,
     CounterModule,
     NgxSpinnerModule,
     BrowserAnimationsModule

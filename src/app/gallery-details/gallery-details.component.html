@@ -1,33 +1,15 @@
-<section id="galleryDetails">
-    <div class="container">
-        <header class="section-header helperline-red">
-            <h3>{{GalleryName}}</h3>
-            <!-- <div class="date_city">
-                <div>
-                    <fa class="icon" name="calendar" style="color: #FFF;"></fa>
-                    <h5>{{GalleryDate}}</h5>
-                </div>
-
-                <div>
-                    <fa class="icon" name="map-marker" style="color: #FFF;"></fa>
-                    <h5>{{GalleryCity}}</h5>
-                </div>
-            </div> -->
+<section id="galleryDetails" class="alw-section">
+    <div class="container" data-aos="fade-right">
+        <header class="section-header">
+            <h1>{{GalleryName}}</h1>
         </header>
-        <div id="fotocontainer" class="row">
-            <div class="row">
-                <div class="column">
-                    <img *ngFor="let foto of galleryFirstColumn; let i = index" data-aos="fade-up" data-aos-duration="500" [attr.data-aos-delay]="i*100" src="{{foto.src}}">
-                </div>
-                <div class="column">
-                    <img *ngFor="let foto of gallerySecondColumn; let i = index" data-aos="fade-up" data-aos-duration="500" [attr.data-aos-delay]="i*100" src="{{foto.src}}">
-                </div>
-                <div class="column">
-                    <img *ngFor="let foto of galleryThirdColumn; let i = index" data-aos="fade-up" data-aos-duration="500" [attr.data-aos-delay]="i*100" src="{{foto.src}}">
-                </div>
-                <div class="column">
-                    <img *ngFor="let foto of galleryFourthColumn; let i = index" data-aos="fade-up" data-aos-duration="500" [attr.data-aos-delay]="i*100" src="{{foto.src}}">
-                </div>
+    </div>
+    <div class="container">
+        <app-spinnerloading *ngIf="showSpinner" style="margin: auto;"></app-spinnerloading>
+
+        <div *ngIf="!showSpinner" class="card-columns">
+            <div class="card" *ngFor="let item of galleryDetailsList; let i = index ;" style="min-height: 100px; min-width: 100px;">
+                <img [defaultImage]="defaultImage" [lazyLoad]="item.thumb" alt="No image" style="width:100%;" (click)="onSelect(i)" />
             </div>
         </div>
     </div>

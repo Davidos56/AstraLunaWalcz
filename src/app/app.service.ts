@@ -38,8 +38,8 @@ export class AppService {
   offerDetailsUrl = 'http://astraluna.pl/AstraLunaAdminPage/wp-json/alw/v1/getOffersDetails/';
   branchesURL = 'http://astraluna.pl/AstraLunaAdminPage/wp-json/alw/v1/getBranches';
   branchDetailsURL = 'http://astraluna.pl/AstraLunaAdminPage/wp-json/alw/v1/getBranchById/';
-  galleryURL = './././assets/json/gallery/getGalleryList';
-  galleryDetailsURL = './././scripts/getPhotosList';
+  galleryURL = 'http://astraluna.pl/AstraLunaAdminPage/wp-json/alw/v1/getGallery/';
+  galleryDetailsURL = 'http://astraluna.pl/AstraLunaAdminPage/wp-json/alw/v1/getGalleryByName/';
   trainersList = './././assets/json/trainerList.json'
   partnersList = './././assets/json/partners.json'
 
@@ -66,7 +66,7 @@ export class AppService {
 
   getGalleryList() : Observable<IGalleryList[]>
   {
-    return this.http.get<IGalleryList[]>(this.GetGallery(this.env));
+    return this.http.get<IGalleryList[]>(this.galleryURL);
   }
 
   getGalleryByName(name) : Observable<IGalleryList>
@@ -74,9 +74,9 @@ export class AppService {
     return this.getGalleryList().pipe(map(x=> x.find(y=>y.dirname == name)));
   }
 
-  getGalleryDetails(path) : Observable<IAlbum[]>
+  getGalleryDetails(id) : Observable<IAlbum[]>
   {
-    return this.http.get<IAlbum[]>(this.GetGalleryDetails(this.env,path))
+    return this.http.get<IAlbum[]>(this.galleryDetailsURL+id)
   }
   getTrainersList() : Observable<ITrainer[]>
   {

@@ -1,5 +1,6 @@
 export interface IGalleryList
 {
+    id: number;
     dirname: string;
     dirpath: string;
     photopath:string;

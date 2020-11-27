@@ -12,11 +12,14 @@ import { IGalleryList } from '../interface/galleryinterface';
 export class GalleryComponent implements OnInit {
 
   public gallery:IGalleryList[];
+  public showSpinner:boolean;
   constructor(private service: AppService, private router: Router) { }
 
   ngOnInit() {
+    this.showSpinner = true;
     this.service.getGalleryList().subscribe(x=> {
-      this.gallery = x;
+     this.gallery = x;
+      this.showSpinner = false;
     });
   }
 

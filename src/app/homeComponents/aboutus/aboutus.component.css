@@ -100,6 +100,11 @@ h3 {
         background-image: /* top, transparent red, faked with gradient */
         linear-gradient( rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('src/assets/images/turniej.jpg');
     }
+    .bcg {
+        position: inherit;
+        height: 100%;
+        background: none;
+    }
     .section-header:before,
     .section-header:after {
         background-color: #FFFFFF;

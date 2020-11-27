@@ -1,10 +1,14 @@
-<section id="gallerysection">
-    <div class="container">
+<section id="gallerysection" class="alw-section">
+    <div class="container" data-aos="fade-right">
         <header class="section-header">
             <h3>Galeria</h3>
         </header>
+    </div>
+
+    <div class="container">
+        <app-spinnerloading *ngIf="showSpinner" style="margin: auto;"></app-spinnerloading>
         <div class="row">
-            <div *ngFor="let item of gallery; let i = index" class="col-md-4 col-lg-4" data-aos="fade-up" data-aos-duration="500" [attr.data-aos-delay]="i*100" (click)="onSelect(item)">
+            <div *ngFor="let item of gallery; let i = index" class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-duration="500" [attr.data-aos-delay]="i*100" (click)="onSelect(item)">
                 <div class="card" [style.background]="'url('+ item.photopath +')'">
                     <div class=content>
                         <div class="container">
@@ -18,7 +22,6 @@
                                     <fa width="20px" class="icon" name="calendar" style="color: #FFF;"></fa>
                                     <h5>{{item.date}}</h5>
                                 </div>
-
                                 <div>
                                     <fa width="20px" class="icon" name="map-marker" style="color: #FFF;"></fa>
                                     <h5>{{item.city}}</h5>
