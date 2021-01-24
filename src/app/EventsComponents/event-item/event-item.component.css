@@ -6,7 +6,7 @@
     margin: 0px 0px 20px;
 }
 
-.eventItem>time {
+.eventItem>.time {
     display: inline-block;
     width: 100%;
     color: rgb(255, 255, 255);
@@ -16,22 +16,29 @@
     text-transform: uppercase;
 }
 
-.eventItem:nth-child(even)>time {
+.eventItem:nth-child(even)>.time {
     background-color: rgb(165, 82, 167);
 }
 
-.eventItem>time>span {
+.eventItem>.time>span {
     display: none;
 }
 
-.eventItem>time>.day {
+.eventItem>.time>.day {
     display: block;
-    font-size: 56pt;
+    font-size: 52pt;
     font-weight: 100;
     line-height: 1;
 }
 
-.eventItem time>.month {
+.eventItem .time>.month {
+    display: block;
+    font-size: 24pt;
+    font-weight: 900;
+    line-height: 1;
+}
+
+.eventItem .time>.year {
     display: block;
     font-size: 24pt;
     font-weight: 900;
@@ -104,37 +111,52 @@
     background-color: rgb(200, 200, 200);
 }
 
+.city {
+    padding: 0px 10px;
+    display: flex;
+}
+
+.city>h5 {
+    margin: 0;
+    margin-left: 5px;
+    align-self: center;
+}
+
+.eventInfo {
+    display: flex;
+}
+
 @media (min-width: 768px) {
     .eventItem {
         position: relative;
         display: block;
         width: 100%;
-        height: 120px;
+        height: 150px;
         padding: 0px;
     }
-    .eventItem>time,
+    .eventItem>.time,
     .eventItem>img {
         display: inline-block;
     }
-    .eventItem>time,
+    .eventItem>.time,
     .eventItem>img {
-        width: 120px;
+        width: 150px;
         float: left;
     }
     .eventItem>.info {
         background-color: rgb(245, 245, 245);
         overflow: hidden;
     }
-    .eventItem>time,
+    .eventItem>.time,
     .eventItem>img {
-        width: 120px;
-        height: 120px;
+        width: 150px;
+        height: 150px;
         padding: 0px;
         margin: 0px;
     }
     .eventItem>.info {
         position: relative;
-        height: 120px;
+        height: 150px;
         text-align: left;
         padding-right: 40px;
     }

@@ -14,6 +14,7 @@ import { ITrainer } from './interface/trainersinterface';
 import { IPartners } from './interface/partners';
 import { IMessages } from './interface/Imessages';
 import { IBranchList } from './interface/IBranch';
+import { EventList } from './interface/event-list';
 
 
 @Injectable({
@@ -40,6 +41,7 @@ export class AppService {
   branchDetailsURL = 'http://astraluna.pl/AstraLunaAdminPage/wp-json/alw/v1/getBranchById/';
   galleryURL = 'http://astraluna.pl/AstraLunaAdminPage/wp-json/alw/v1/getGallery/';
   galleryDetailsURL = 'http://astraluna.pl/AstraLunaAdminPage/wp-json/alw/v1/getGalleryByName/';
+  eventsURL='http://astraluna.pl/AstraLunaAdminPage/wp-json/alw/v1/getEvents/';
   trainersList = './././assets/json/trainerList.json'
   partnersList = './././assets/json/partners.json'
 
@@ -91,6 +93,11 @@ export class AppService {
   getMessages() :Observable<IMessages[]>
   {
     return this.http.get<IMessages[]>(this.messagesUrl);
+  }
+
+  getEventsList() :Observable<EventList[]>
+  {
+    return this.http.get<EventList[]>(this.eventsURL);
   }
 
 

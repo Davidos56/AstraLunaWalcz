@@ -1,24 +1,16 @@
-<section id="offersection">
+<section id="gallerysection" class="alw-section">
+    <div class="container" data-aos="fade-right">
+        <header class="mainHeader">
+            <h1>Wydarzenia</h1>
+        </header>
+    </div>
     <div class="container">
+        <app-spinnerloading *ngIf="showSpinner" style="margin: auto;"></app-spinnerloading>
         <div class="row">
-            <div class="col-lg-12 col-md-12">
-                <div class="container" data-aos="fade-right">
-                    <div class="mainHeader">
-                        <h1>Wydarzenia</h1>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-12">
-                            <ul class="event-list">
-                                <app-event-item></app-event-item>
-                                <app-event-item></app-event-item>
-                                <app-event-item></app-event-item>
-                                <app-event-item></app-event-item>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+            <div class="col-xl-12">
+                <ul class="event-list">
+                    <app-event-item *ngFor="let item of items; let i = index" [Event]="item" data-aos="fade-up" data-aos-duration="500" [attr.data-aos-delay]="i*100"></app-event-item>
+                </ul>
             </div>
         </div>
     </div>

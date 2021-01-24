@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { EventList } from 'src/app/interface/event-list';
 
 @Component({
   selector: 'app-event-item',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventItemComponent implements OnInit {
 
+  @Input() Event : EventList
   constructor() { }
 
   ngOnInit() {
