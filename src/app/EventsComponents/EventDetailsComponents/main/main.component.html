@@ -1,0 +1,19 @@
+<section class="event-section set-bg" [style.background]="'url('+ EventDetailsMain.background +')'" [ngStyle]="{backgroundIname: expression}">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7">
+                <div class="event-text">
+                    <span>{{EventDetailsMain.date}}, {{EventDetailsMain.place}}, {{EventDetailsMain.street}}</span>
+                    <header class="section-header">
+                        <h1>
+                            {{EventDetailsMain.name}}
+                        </h1>
+                    </header>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <img src="{{EventDetailsMain.first_plan_img}}" alt="">
+            </div>
+        </div>
+    </div>
+</section>

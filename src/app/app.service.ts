@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Offer } from './models/offerModel'
 import { OFFERS } from './mock/offer-mock'
 import { IOffer } from './interface/offerInterface'
-import { Observable, pipe } from 'rxjs';
+import { Observable, ObservedValueOf, pipe } from 'rxjs';
 import { find ,map, pluck } from 'rxjs/operators';
 import { IOfferDetails, ICalendarDetails, IBranchDetails } from './interface/offerdetailsInterface';
 import { IGalleryList } from './interface/galleryinterface';
@@ -15,6 +15,7 @@ import { IPartners } from './interface/partners';
 import { IMessages } from './interface/Imessages';
 import { IBranchList } from './interface/IBranch';
 import { EventList } from './interface/event-list';
+import { EventDetails } from './interface/event-details';
 
 
 @Injectable({
@@ -42,6 +43,7 @@ export class AppService {
   galleryURL = 'http://astraluna.pl/AstraLunaAdminPage/wp-json/alw/v1/getGallery/';
   galleryDetailsURL = 'http://astraluna.pl/AstraLunaAdminPage/wp-json/alw/v1/getGalleryByName/';
   eventsURL='http://astraluna.pl/AstraLunaAdminPage/wp-json/alw/v1/getEvents/';
+  eventsDetailsURL='http://localhost/AstraLunaWalczPage/api/wp-json/alw/v1/getEventByID/';
   trainersList = './././assets/json/trainerList.json'
   partnersList = './././assets/json/partners.json'
 
@@ -98,6 +100,9 @@ export class AppService {
   getEventsList() :Observable<EventList[]>
   {
     return this.http.get<EventList[]>(this.eventsURL);
+  }
+  getEventsDetails(id): Observable<EventDetails>{
+    return this.http.get<EventDetails>(this.eventsDetailsURL + id)
   }
 
 

@@ -10,6 +10,7 @@ import { GalleryDetailsComponent } from './gallery-details/gallery-details.compo
 import { CommunicatesComponent } from './communicates/communicates.component';
 import { BranchComponent } from './branch/branch.component';
 import { BranchDetailsComponent } from './branch-details/branch-details.component';
+import { EventsDetailsComponent } from './EventsComponents/events-details/events-details.component';
 
 const routes: Routes = [
 
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'team', component : TeamComponent},
   { path: 'communicates', component : CommunicatesComponent},
   { path: 'events', component : EventsComponent},
+  { path: 'events/:id', component : EventsDetailsComponent},
   { path: 'team/:id', component : TeamComponent},
   { path: 'gallery',component : GalleryComponent},
   { path: 'home'  ,component: HomeComponent },

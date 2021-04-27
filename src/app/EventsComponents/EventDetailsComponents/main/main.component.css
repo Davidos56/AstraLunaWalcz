@@ -1,0 +1,43 @@
+.event-section {
+    padding-top: 55px;
+}
+
+.event-section .event-text span {
+    font-size: 16px;
+    color: #f71d2b;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.event-section .event-text {
+    padding-top: 184px;
+}
+
+.set-bg {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.event-section .event-text h2 {
+    font-size: 60px;
+    color: #fff;
+    line-height: 72px;
+    font-weight: 600;
+    margin-top: 24px;
+    margin-bottom: 35px;
+}
+
+.section-header>h1 {
+    font-size: 40px;
+    font-weight: 900;
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+    color: #fff;
+}
+
+.section-header:before,
+.section-header:after {
+    background-color: #ffffff;
+}

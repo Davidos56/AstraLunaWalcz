@@ -1,1 +1,9 @@
-<p>events-details works!</p>
+<section id="galleryDetails" class="alw-section" style="padding: 0;">
+    <app-spinnerloading *ngIf="showSpinner" style="margin: auto;"></app-spinnerloading>
+    <app-main *ngIf="!showSpinner" [EventDetailsMain]="EventDetailsMain" data-aos="fade-up" data-aos-duration="500" [attr.data-aos-delay]="100"></app-main>
+    <app-time-count *ngIf="!showSpinner" data-aos="fade-up" data-aos-duration="500" [attr.data-aos-delay]="200"></app-time-count>
+    <app-event-desc *ngIf="!showSpinner" [eventContent]="EventContent"></app-event-desc>
+    <app-event-partners *ngIf="!showSpinner" [eventPartners]="EventPartners"></app-event-partners>
+    <app-eventplan *ngIf="!showSpinner"></app-eventplan>
+    <app-eventlocalization *ngIf="!showSpinner"></app-eventlocalization>
+</section>

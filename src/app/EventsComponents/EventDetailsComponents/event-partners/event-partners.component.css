@@ -1,0 +1,90 @@
+.team-member-section {
+    overflow: hidden;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 52px;
+}
+
+@media only screen and (min-width: 1200px) {
+    .container {
+        max-width: 1170px;
+    }
+}
+
+.member-item {
+    width: 20%;
+    float: left;
+    height: 420px;
+    position: relative;
+    overflow: hidden;
+}
+
+.container-info h4 {
+    color: #fff;
+    font-size: 36px !important;
+    text-transform: uppercase;
+    z-index: 9999;
+}
+
+.animated {
+    animation-fill-mode: none;
+}
+
+.set-bg,
+.set-bg:hover {
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: center center !important;
+}
+
+.content {
+    height: 420px;
+    transition: 0.3s;
+    margin: 0;
+    z-index: 9999;
+    position: relative;
+}
+
+.content:hover {
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.member-item:hover {
+    background: rgba(0, 0, 0, 0.4);
+    width: 20%;
+    z-index: 9999;
+}
+
+.member-item:hover .addinfohover {
+    opacity: 1;
+}
+
+.member-item:hover .container {
+    opacity: 0;
+}
+
+.member-item:hover .container-info {
+    opacity: 1;
+    animation-name: fadeInUp;
+    animation-duration: 0.3s;
+}
+
+.container-info {
+    opacity: 0;
+    text-align: center;
+    margin: 0 auto;
+    position: relative;
+    top: 40%;
+    background-size: cover;
+    background-repeat: no-repeat !important;
+    background-position: center center !important;
+}
+
+.member-item .mi-social .mi-social-inner a {
+    display: inline-block;
+    font-size: 18px;
+    color: #ffffff;
+    margin-right: 10px;
+}

@@ -1,0 +1,33 @@
+<section class="team-member-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title">
+                    <header class="section-header">
+                        <h1>
+                            Partnerzy
+                        </h1>
+                    </header>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--  -->
+    <div class="member-item set-bg" *ngFor="let item of eventPartners" [style.background-image]="'url(' + item.image + ')'">
+        <div class=content>
+            <div class="container-info">
+                <h4><b>{{item.name}}</b></h4>
+                <div class="mi-social">
+                    <div class="mi-social-inner bg-gradient">
+                        <!-- social media  -->
+                        <a href="#" *ngIf="item.socialMedia.facebook"><i class="fa fa-facebook"></i></a>
+                        <a href="#" *ngIf="item.socialMedia.instagram"><i class="fa fa-instagram"></i></a>
+                        <a href="#" *ngIf="item.socialMedia.twitter"><i class="fa fa-twitter"></i></a>
+                        <a href="#" *ngIf="item.socialMedia.linkedin"><i class="fa fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>

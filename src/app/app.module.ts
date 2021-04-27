@@ -39,6 +39,12 @@ import { BranchDetailsComponent } from './branch-details/branch-details.componen
 import { NgxMasonryModule } from 'ngx-masonry';
 import { LazyLoadImgDirective } from './directives/lazy-load-img.directive';
 import { EventItemComponent } from './EventsComponents/event-item/event-item.component';
+import { MainComponent } from './EventsComponents/EventDetailsComponents/main/main.component';
+import { TimeCountComponent } from './EventsComponents/EventDetailsComponents/time-count/time-count.component';
+import { EventDescComponent } from './EventsComponents/EventDetailsComponents/event-desc/event-desc.component';
+import { EventplanComponent } from './EventsComponents/EventDetailsComponents/eventplan/eventplan.component';
+import { EventPartnersComponent } from './EventsComponents/EventDetailsComponents/event-partners/event-partners.component';
+import { EventlocalizationComponent } from './EventsComponents/EventDetailsComponents/eventlocalization/eventlocalization.component';
 
 
 @NgModule({
@@ -65,7 +71,13 @@ import { EventItemComponent } from './EventsComponents/event-item/event-item.com
     BranchComponent,
     BranchDetailsComponent,
     LazyLoadImgDirective,
-    EventItemComponent,    
+    EventItemComponent,
+    MainComponent,
+    TimeCountComponent,
+    EventDescComponent,
+    EventplanComponent,
+    EventPartnersComponent,
+    EventlocalizationComponent,    
   ],
   imports: [
     BrowserModule,
