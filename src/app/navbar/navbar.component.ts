@@ -1,5 +1,6 @@
 import { Component, OnInit, HostListener } from '@angular/core';
-import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-navbar',
@@ -13,43 +14,37 @@ export class NavbarComponent implements OnInit {
 
   constructor(private router: Router) {
     router.events.subscribe((path: NavigationEnd) => {
-      
-      if (path.url != null) 
-      {
-        window.scroll({ 
-          top: 0, 
-          left: 0, 
-          behavior: 'auto' }) 
+    
+      if (path.url != null && path.url != this.href) {
+        this.SetTopSide();
         this.href = path.url
-
-        if (this.href != "/home" && this.href != "/" ) {
-          this.sticky = true;
-        }
-        else {
-          this.sticky = false;
-        }
+        this.sticky = this.href != "/home";
       }
     })
   } 
-  ngOnInit() 
-  {
-   
-  }
-
+  ngOnInit() {}
 
   @HostListener('window:scroll', ['$event'])
   scrollHandler($event) {
     if (this.href == "/home" || this.href == "/") {
-      const verticalOffset = window.pageYOffset
-      if (verticalOffset > 200) {
-        this.sticky = true;
-      }
-      else {
-        this.sticky = false;
-      }
+        this.sticky = window.pageYOffset > 150;
     } else {
       this.sticky = true;
     }
+  }
+
+  private SetTopSide(){
+    window.scroll({ 
+      top: 0, 
+      left: 0, 
+      behavior: 'auto' }) 
+  }
+
+  private Debug(item:any){
+    if(!environment.production)
+      {
+        console.log(item);        
+      }
   }
 }
 

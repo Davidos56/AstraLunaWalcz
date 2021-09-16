@@ -44,5 +44,4 @@ export class OfferDetailsComponent implements OnInit {
           this.showSpinner = false;
       });
   }
-
 }

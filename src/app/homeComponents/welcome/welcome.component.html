@@ -1,25 +1,23 @@
-<section id="welcomesection">
+<section id="welcomesection" (resized)="onResized($event)">
     <div class="row">
-        <div id="info" class="col-lg-5 col-md-5 helperline-red">
-            <div class="info_content helperline-red">
-                <div class="logo_content ">
-                    <img class="imageBlack" src="assets\images\logos\AstraLunaLogoBlack.svg">
-                    <img class="imageWhite" src="assets\images\logos\AstraLunaLogoWhite.svg">
-                    <p>Wałecka szkoła Tańca</p>
+        <div id="info" class="col-lg-5 col-md-5">
+            <div class="info_content">
+                <div class="content-header  info-content-child">
+                    <img [src]='MainLogoPath'>
+                    <h2>Wałecka szkoła Tańca</h2>
                 </div>
-                <div class="quotation">
+                <div class="quotation info-content-child">
                     <blockquote>
                         "Nie czyńmy tylko samych kroków i figur, lecz studiujmy namiętności, przyzwyczajając naszą duszę do ich odczuwania"
                         <footer>JEAN GEORGES NOVERRE <br> francuski baletmistrz i teoretyk tańca.</footer>
                     </blockquote>
                 </div>
-                <div class="additional helperline-green">
-                    <img class="imageBlack" src="assets\images\logos\AstraGrupaBlack.svg">
-                    <img class="imageWhite" src="assets\images\logos\AstraGrupaWhite.svg">
+                <div class="additional info-content-child">
+                    <img [src]='SubLogoPath'>
                 </div>
             </div>
         </div>
-        <div id="slider" class="col-lg-7 col-md-7 helperline-green">
+        <div id="slider" class="col-lg-7 col-md-7">
             <div class="crossfade">
                 <figure></figure>
                 <figure></figure>

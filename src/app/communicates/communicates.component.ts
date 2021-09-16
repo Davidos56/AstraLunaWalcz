@@ -27,30 +27,4 @@ export class CommunicatesComponent implements OnInit {
         this.showSpinner = false;
       });
   }
-
-
-  // private generateCommunicates(offers:IOffer[])
-  // {
-  //   offers.forEach(element => {
-
-  //     var temp = this.service.getOfferDetails(element.path).subscribe(y=>
-  //       {
-  //         if(y.offerComments.content != ""){
-  //         var comments :IBodyDetails = 
-  //         {
-  //           date: y.offerComments.date,
-  //           head: y.offerComments.date +" - "+y.offerName + " - "+ y.offerComments.head,
-  //           content: y.offerComments.content
-  //         };
-
-  //         this.offerBody.push(comments);
-  //       }
-  //       })
-  //   });
-
-  //   this.offerBody.sort((a, b) => {
-  //     return <any>new Date(b.date) - <any>new Date(a.date);
-  //   });
-  // }
-
 }

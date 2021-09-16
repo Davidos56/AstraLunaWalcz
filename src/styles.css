@@ -113,3 +113,11 @@ section {
 .alw-shadow {
     box-shadow: inset 0px 0px 60px -11px #888, inset 0px 0px 60px -11px #888 !important;
 }
+
+.helper-line-red{
+    border:2px solid red;
+}
+
+.helper-line-green{
+    border:2px solid green;
+}
